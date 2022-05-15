@@ -4,8 +4,12 @@ import java.util.Scanner;
 public class Funcoes {
 
     private static Scanner scanner = new Scanner(System.in);
+    private static final String VERMELHO = "\u001B[31m";
+    private static final String VERDE = "\u001B[32m";
+    private static final String BRANCO = "\u001B[37m";
     private static Console console = System.console();
     private static int voltar = 0;
+    public static boolean papelDirecoes = false;
 
 
     public static void limparTela () {
@@ -64,14 +68,14 @@ public class Funcoes {
 
     public static int perguntaResposta (String texto, String opcoes []) {
 
-        System.out.println(texto);
+        System.out.println(BRANCO + texto);
         int tam = opcoes.length;
 
         for (int i = 0; i < tam;  i++) {
             System.out.println((i + 1) + opcoes[i]);
         }
 
-        System.out.print("Selecione uma opção entre 1/" + tam);
+        System.out.print(BRANCO + "Selecione uma opção entre 1/" + tam);
         int resposta = scanner.nextInt();
 
 
@@ -86,6 +90,7 @@ public class Funcoes {
         try {
             
             int resposta = 0;
+            boolean chave = false;
             String textoInicial = "O jogador acorda em um quarto escuro, onde a unica fonte de luz e uma lamparina que esta ao lado dele, ele a pega para iluminar mais o local, junto a ela havia uma chave. Em um dos cantos desse quarto, ele observa algo escondido por um pano o cobrindo e ao norte ha uma porta fechada. \nO que voce deseja fazer?";
             String opUm [] = {"Pegar chave", "Ir ate o canto do quarto", "Ir ate e abrir a porta"};
             String caixaM = "Ele vai ate o canto onde ele viu algo e tira o pano de cima, revelando uma caixa pequena de madeira."; 
@@ -117,16 +122,27 @@ public class Funcoes {
 
                         switch (resposta) {
                             case 1:
+                                System.out.println(BRANCO + "Ele abre a caixa, dentro ele encontra um papel com direções escritas em uma ordem:" + VERMELHO + "esquerda-direita-direita-esquerda-direita " + BRANCO + " e logo em seguida está escrito:" + VERMELHO + " Não se perca." + VERDE + "\n" + "Você obteve um papel com direções!");
+                                voltar = 0;
+
                             case 2:
+                                voltar = 0;
+                                break;
+
                             default:
+                                voltar = 0;
                         }
 
 
-                   case 3:
+                   case 3: 
+                        if (chave == false) 
+                            System.out.println("A porta está trancada.");
+                        else 
+                            voltar++;
                    default:
+                        voltar = 0;
                }
                 
-               
                limparTela();
 
             } while (voltar != 0);
