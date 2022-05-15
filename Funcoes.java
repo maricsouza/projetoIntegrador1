@@ -4,10 +4,11 @@ import java.util.Scanner;
 public class Funcoes {
 
     private static Scanner scanner = new Scanner(System.in);
+    private static Console console = System.console();
     private static final String VERMELHO = "\u001B[31m";
     private static final String VERDE = "\u001B[32m";
     private static final String BRANCO = "\u001B[37m";
-    private static Console console = System.console();
+    private static final String AMARELO = "\u001B[33m";
     private static int voltar = 0;
     public static boolean papelDirecoes = false;
 
@@ -22,60 +23,16 @@ public class Funcoes {
         }
     }
 
-
-    // public static void cenasPerguntas (String texto, String opcoes[], String posRespostas[][]) {
-    //     System.out.println(texto);
-    //     System.out.println("O que voce deseja fazer?");
-
-    //     int tamanho = opcoes.length;
-    //     for (int i = 0; i < tamanho; i++) {
-    //         System.out.println((i + 1) + " " + opcoes[i]);
-    //     }
-
-    //     if (tamanho == 1) 
-    //         System.out.print("Selecione uma opção: ");
-    //     else 
-    //         System.out.print ("Digite um número de 1/" + tamanho + ": ");
-
-    //     String resposta = console.readLine();
-
-    //     if (tamanho == 3) {
-
-    //         if (resposta.equalsIgnoreCase(posRespostas[1][1]) ) {
-    //             System.out.println(posRespostas[1][2]);
-    //         } else if (resposta.equalsIgnoreCase(posRespostas[2][1])) {
-    //             System.out.println(posRespostas[2][2]);
-    //         } else {
-    //             System.out.println(posRespostas[3][2]);
-    //         }
-
-    //     } else if (tamanho == 2) {
-
-    //         if (resposta.equalsIgnoreCase(posRespostas[1][1]) ) {
-    //             System.out.println(posRespostas[1][2]);
-    //         } else 
-    //             System.out.println(posRespostas[2][2]);
-
-    //     } else if (tamanho == 1) {
-
-    //         if (resposta.equalsIgnoreCase(posRespostas[1][1]) )
-    //             System.out.println(posRespostas[1][2]);
-
-    //     } else {
-    //         System.out.println("Não há essa opção de resposta");
-    //     }
-    // }
-
     public static int perguntaResposta (String texto, String opcoes []) {
 
         System.out.println(BRANCO + texto);
         int tam = opcoes.length;
 
         for (int i = 0; i < tam;  i++) {
-            System.out.println((i + 1) + opcoes[i]);
+            System.out.println((i + 1) + ". " + opcoes[i]);
         }
 
-        System.out.print(BRANCO + "Selecione uma opção entre 1/" + tam);
+        System.out.print(BRANCO + ("Selecione uma opcao entre 1/" + tam + ": "));
         int resposta = scanner.nextInt();
 
 
@@ -97,55 +54,90 @@ public class Funcoes {
             String caixM[] = {"Abrir caixa", "Voltar"};
 
             do {
+
                 voltar = 0;
                 voltar++;
 
                resposta = perguntaResposta(textoInicial, opUm);
 
                if (validator(resposta) || resposta > opUm.length){
-                    System.out.println("Resposta nao permitida. ");
+                    limparTela();
+                    System.out.println(AMARELO + "Resposta nao permitida. ");
                     voltar = 0;
                } 
 
                switch (resposta) {
                    case 1:
-                        System.out.println("Você pegou a chave.");
-                        voltar = 0;
+
+                        limparTela();
+
+                        if (chave == false) {
+                            System.out.println(VERDE + ("Voce pegou a chave."));
+                            voltar = 0;
+                            chave = true;
+                        } else {
+                            System.out.println(AMARELO +"Voce ja pegou a chave");
+                            voltar = 0;
+                        }
                         break;
+
                    case 2:
 
+                        limparTela();
+
                         resposta = perguntaResposta(caixaM, caixM);
+
                         if (validator(resposta) || resposta > opUm.length){
-                            System.out.println("Resposta nao permitida. ");
+                            limparTela();
+                            System.out.println(AMARELO + "Resposta nao permitida. ");
                             voltar = 0;
                         } 
 
                         switch (resposta) {
+
                             case 1:
-                                System.out.println(BRANCO + "Ele abre a caixa, dentro ele encontra um papel com direções escritas em uma ordem:" + VERMELHO + "esquerda-direita-direita-esquerda-direita " + BRANCO + " e logo em seguida está escrito:" + VERMELHO + " Não se perca." + VERDE + "\n" + "Você obteve um papel com direções!");
-                                voltar = 0;
+                                limparTela();
+                                if (papelDirecoes == false) {
+                                    System.out.println(BRANCO + "Ele abre a caixa, dentro ele encontra um papel com direcoes escritas em uma ordem:" + VERMELHO + "esquerda-direita-direita-esquerda-direita " + BRANCO + " e logo em seguida esta escrito:" + VERMELHO + " Nao se perca." + VERDE + "\n" + "Voce obteve um papel com direcoes!");
+                                    papelDirecoes = true;
+                                    
+                                    
+                                } else {
+                                    System.out.println(AMARELO + "Voce ja abriu a caixa.");
+                                }
+                                    voltar = 0;
+                                    break;
 
                             case 2:
+                                limparTela();
                                 voltar = 0;
                                 break;
 
                             default:
                                 voltar = 0;
+                                break;
                         }
+
+                        break;
 
 
                    case 3: 
-                        if (chave == false) 
-                            System.out.println("A porta está trancada.");
-                        else 
+                        limparTela();
+                        if (chave == false){
+                             
+                            System.out.println(AMARELO + "A porta esta trancada.");
+                            voltar = 0;
+                        }else
                             voltar++;
+
+                        break;
+
                    default:
                         voltar = 0;
                }
                 
-               limparTela();
 
-            } while (voltar != 0);
+            } while (voltar == 0);
 
         } catch (Exception ex) {
             ex.printStackTrace();
