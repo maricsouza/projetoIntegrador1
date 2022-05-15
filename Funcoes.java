@@ -51,10 +51,6 @@ public class Funcoes {
     }
 
     public static void direcoesConf (int usuDirecao, int direcao[], int numDirecao) {
-
-        
-        String opCenaDois [] = {"Esquerda", "Direita"};
-        int resposta = 0;
         
         System.out.println(numDirecao);
         if (direcaoCerta(usuDirecao, direcao, numDirecao)) {
@@ -207,10 +203,9 @@ public class Funcoes {
                 if (certo >= 1) {
                     teste++;
                     resposta = perguntaResposta(ladoCerto, opCenaDois);
+
                     direcoesConf(resposta, direcoes, teste);
                 }
-                    
-                
 
  
             } while (volta == 0 || volta < 4);
