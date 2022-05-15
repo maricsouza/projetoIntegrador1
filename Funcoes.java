@@ -3,8 +3,9 @@ import java.util.Scanner;
 
 public class Funcoes {
 
-    Scanner scanner = new Scanner(System.in);
-    public static Console console = System.console();
+    private static Scanner scanner = new Scanner(System.in);
+    private static Console console = System.console();
+    private static int voltar = 0;
 
 
     public static void limparTela () {
@@ -17,31 +18,121 @@ public class Funcoes {
         }
     }
 
+
+    // public static void cenasPerguntas (String texto, String opcoes[], String posRespostas[][]) {
+    //     System.out.println(texto);
+    //     System.out.println("O que voce deseja fazer?");
+
+    //     int tamanho = opcoes.length;
+    //     for (int i = 0; i < tamanho; i++) {
+    //         System.out.println((i + 1) + " " + opcoes[i]);
+    //     }
+
+    //     if (tamanho == 1) 
+    //         System.out.print("Selecione uma opção: ");
+    //     else 
+    //         System.out.print ("Digite um número de 1/" + tamanho + ": ");
+
+    //     String resposta = console.readLine();
+
+    //     if (tamanho == 3) {
+
+    //         if (resposta.equalsIgnoreCase(posRespostas[1][1]) ) {
+    //             System.out.println(posRespostas[1][2]);
+    //         } else if (resposta.equalsIgnoreCase(posRespostas[2][1])) {
+    //             System.out.println(posRespostas[2][2]);
+    //         } else {
+    //             System.out.println(posRespostas[3][2]);
+    //         }
+
+    //     } else if (tamanho == 2) {
+
+    //         if (resposta.equalsIgnoreCase(posRespostas[1][1]) ) {
+    //             System.out.println(posRespostas[1][2]);
+    //         } else 
+    //             System.out.println(posRespostas[2][2]);
+
+    //     } else if (tamanho == 1) {
+
+    //         if (resposta.equalsIgnoreCase(posRespostas[1][1]) )
+    //             System.out.println(posRespostas[1][2]);
+
+    //     } else {
+    //         System.out.println("Não há essa opção de resposta");
+    //     }
+    // }
+
+    public static int perguntaResposta (String texto, String opcoes []) {
+
+        System.out.println(texto);
+        int tam = opcoes.length;
+
+        for (int i = 0; i < tam;  i++) {
+            System.out.println((i + 1) + opcoes[i]);
+        }
+
+        System.out.print("Selecione uma opção entre 1/" + tam);
+        int resposta = scanner.nextInt();
+
+
+        return resposta;
+    }
+
+    public static boolean validator (int valor) {
+        return valor < 0 || valor == 0;
+    }
+
     public static void cenaUm () {
+        try {
+            
+            int resposta = 0;
+            String textoInicial = "O jogador acorda em um quarto escuro, onde a unica fonte de luz e uma lamparina que esta ao lado dele, ele a pega para iluminar mais o local, junto a ela havia uma chave. Em um dos cantos desse quarto, ele observa algo escondido por um pano o cobrindo e ao norte ha uma porta fechada. \nO que voce deseja fazer?";
+            String opUm [] = {"Pegar chave", "Ir ate o canto do quarto", "Ir ate e abrir a porta"};
+            String caixaM = "Ele vai ate o canto onde ele viu algo e tira o pano de cima, revelando uma caixa pequena de madeira."; 
+            String caixM[] = {"Abrir caixa", "Voltar"};
 
-        boolean chave = false;
+            do {
+                voltar = 0;
+                voltar++;
 
-        System.out.println("O jogador acorda em um quarto escuro, onde a unica fonte de luz e uma lamparina que esta ao lado dele, ele a pega para iluminar mais o local, junto a ela havia uma chave. Em um dos cantos desse quarto, ele observa algo escondido por um pano o cobrindo e ao norte há uma porta fechada. /n O que voce deseja fazer?");
-        System.out.println("1 - Pegar chave \n2 - Ir para o canto do quarto \n3 - Ir ate a porta e abrir");
-        String resp = console.readLine();
+               resposta = perguntaResposta(textoInicial, opUm);
 
-        if (resp.equals("1")) {
-            System.out.println("Voce pegou a chave. (Objeto obtido: chave da porta).");
-            chave = true;
-        } else if (resp.equals("2") ) {
-            System.out.println("Ele vai ate o canto onde ele viu algo e tira o pano de cima, revelando uma caixa pequena de madeira. O que deseja fazer? \n1- Abrir a caixa \n2 - Voltar");
-                resp = console.readLine();
-                    if(resp.equals("1")) {
-                        System.out.println("Ele abre a caixa, dentro ele encontra um papel com direcoes escritas em uma ordem: esquerda-direita-direita-esquerda-direita e logo em seguida esta escrito: Nao se perca. Voce obteve um papel com direcoes! ");
-                    } else {
-                        System.out.println("O jogador acorda em um quarto escuro, onde a unica fonte de luz e uma lamparina que esta ao lado dele, ele a pega para iluminar mais o local, junto a ela havia uma chave. Em um dos cantos desse quarto, ele observa algo escondido por um pano o cobrindo e ao norte ha uma porta fechada. /n O que voce deseja fazer?");
-                    }
-        } else {
-            if (chave == true) {
-                System.out.println("Ele abre a porta e da direto com um corredor sem qualquer iluminação somente com a pouca luz de sua lamparina. Quando o jogador ultrapassa a porta, ela se fecha com força não o deixando voltar, ele se encontra sem escolhas a não ser continuar seguindo. Mais à frente o jogador se depara com dois caminhos com algo escrito na parede entre eles, Não se perca. \nPara que lado você quer ir?");
-            } else {
-                System.out.println("A porta está trancada.");
-            }
+               if (validator(resposta) || resposta > opUm.length){
+                    System.out.println("Resposta nao permitida. ");
+                    voltar = 0;
+               } 
+
+               switch (resposta) {
+                   case 1:
+                        System.out.println("Você pegou a chave.");
+                        voltar = 0;
+                        break;
+                   case 2:
+
+                        resposta = perguntaResposta(caixaM, caixM);
+                        if (validator(resposta) || resposta > opUm.length){
+                            System.out.println("Resposta nao permitida. ");
+                            voltar = 0;
+                        } 
+
+                        switch (resposta) {
+                            case 1:
+                            case 2:
+                            default:
+                        }
+
+
+                   case 3:
+                   default:
+               }
+                
+               
+               limparTela();
+
+            } while (voltar != 0);
+
+        } catch (Exception ex) {
+            ex.printStackTrace();
         }
 
 
