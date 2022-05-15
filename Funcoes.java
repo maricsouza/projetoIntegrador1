@@ -11,6 +11,9 @@ public class Funcoes {
     private static final String AMARELO = "\u001B[33m";
     private static int voltar = 0;
     public static boolean papelDirecoes = false;
+    public static int direcoes[] = {1,2,2,1,2};
+    public static int certo = 0;
+    public static int errado = 0;
 
 
     public static void limparTela () {
@@ -41,6 +44,29 @@ public class Funcoes {
 
     public static boolean validator (int valor) {
         return valor < 0 || valor == 0;
+    }
+
+    public static boolean direcaoCerta (int usuDirecao, int direcao[], int numDirecao) {
+                return usuDirecao == direcao[numDirecao];   
+    }
+
+    public static void direcoesConf (int usuDirecao, int direcao[], int numDirecao) {
+        String ladoCerto = VERDE + "Voce foi para o lado certo." + BRANCO + " \nPara que lado voce quer ir?";
+        String ladoErrado = AMARELO + "Voce foi para o lado errado e teve que voltar desde o comeco do percurso.";
+        String opCenaDois [] = {"Esquerda", "Direita"};
+        int resposta = 0;
+        
+        if (direcaoCerta(usuDirecao, direcao, numDirecao)) {
+            limparTela();
+            if ( papelDirecoes == true) 
+                System.out.println(AMARELO + "esquerda-direita-direita-esquerda-direita");
+            resposta = perguntaResposta(ladoCerto, opCenaDois);
+            certo++;
+
+        } else {
+            errado++;
+        }
+
     }
 
     public static void cenaUm () {
@@ -98,7 +124,7 @@ public class Funcoes {
                             case 1:
                                 limparTela();
                                 if (papelDirecoes == false) {
-                                    System.out.println(BRANCO + "Ele abre a caixa, dentro ele encontra um papel com direcoes escritas em uma ordem:" + VERMELHO + "esquerda-direita-direita-esquerda-direita " + BRANCO + " e logo em seguida esta escrito:" + VERMELHO + " Nao se perca." + VERDE + "\n" + "Voce obteve um papel com direcoes!");
+                                    System.out.println(BRANCO + "Ele abre a caixa, dentro ele encontra um papel com direcoes escritas em uma ordem:" + VERMELHO + "esquerda-direita-direita-esquerda-direita" + BRANCO + " e logo em seguida esta escrito:" + VERMELHO + " Nao se perca." + VERDE + "\n" + "Voce obteve um papel com direcoes!");
                                     papelDirecoes = true;
                                     
                                     
@@ -145,4 +171,51 @@ public class Funcoes {
 
 
     }
+
+
+
+    public static void cenaDois () {
+        try {
+
+            int resposta = 0;
+            int teste = 0;
+            int volta = 0;
+            String textoCenaDois = "Ele abre a porta e da direto com um corredor sem qualquer iluminacao somente com a pouca luz de sua lamparina. Quando o jogador ultrapassa a porta, ela se fecha com forca nao o deixando voltar. Ele se encontra sem escolhas a nao ser continuar seguindo. Mais a frente, o jogador se depara com dois caminhos com algo escrito na parede entre eles." + VERMELHO + " Nao se perca." + BRANCO + " \nPara que lado voce quer ir?";
+            String opCenaDois [] = {"Esquerda", "Direita"};
+
+
+            
+
+            do {
+                volta++;
+
+                if ( papelDirecoes == true) {
+                    System.out.println(AMARELO + "esquerda-direita-direita-esquerda-direita");
+                }  
+
+                if (volta == 1) {
+                    resposta = perguntaResposta(textoCenaDois, opCenaDois);
+                        direcoesConf(resposta, direcoes, 0);
+                }
+                
+                if (errado >= 1) {
+                    limparTela();
+                    System.out.println(VERMELHO + "Voce foi para o lado errado e teve que voltar desde o comeco do percurso.");
+                    volta = 0;
+                    errado = 0;
+                    certo = 0;
+
+                } else if (certo >=1) {
+                    teste++;
+                    direcoesConf(resposta, direcoes, teste);
+                }
+
+ 
+            } while (volta == 0 || volta <= 4);
+
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+    }
+
 }

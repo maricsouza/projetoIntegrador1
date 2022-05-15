@@ -6,5 +6,6 @@ class Jogo {
     public static void main (String [] args ) {
         Funcoes.limparTela();
         Funcoes.cenaUm();
+        Funcoes.cenaDois();
     }
 }
