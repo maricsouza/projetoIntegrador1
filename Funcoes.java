@@ -365,7 +365,7 @@ public class Funcoes {
 
                 resposta = perguntaResposta(textCenaQuatro, opcoesCenaT);
 
-                if (validator(resposta) || resposta > opAvan.length) {
+                if (validator(resposta) || resposta > opcoesCenaT.length) {
                     limparTela();
                     System.out.println(VERMELHO + "Resposta invalida");
                     voltar = 0;
@@ -436,4 +436,36 @@ public class Funcoes {
         }
     }
 
+    public static void cenaCinco() {
+        try {
+
+            String textCinco = "A porta muda outra vez, e uma porta branca simples, o jogador entra e se depara com um quarto e a porta some novamente, parece ser um quarto infantil, uma cama pequena, guarda-roupa e uma mesa baixa com alguns papeis e lapis de cor espalhados. \nO que voce deseja fazer?";
+            int resposta = 0;
+            voltar = 0;
+            boolean chave = false;
+            String opcCinco[] = {"Ir ate a cama", "Ir ate a mesa", "Ir ao guarda-roupa"};
+            String opVolt[] = {"Voltar"};
+            String opAvan [] = {"Avancar"};
+            String opCama[] = {"Pegar e abrir a caixa", opVolt[0]};
+
+            limparTela();
+            do {
+
+                resposta = perguntaResposta(textCinco, opcCinco);
+
+                if (validator(resposta) || resposta > opUm.length){
+                    limparTela();
+                    System.out.println(AMARELO + "Resposta nao permitida. ");
+                    voltar = 0;
+               }
+
+
+
+            } while (voltar == 0);
+
+
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+    }
 }

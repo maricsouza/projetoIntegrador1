@@ -13,5 +13,7 @@ class Jogo {
         Funcoes.cenaTres();
 
         Funcoes.cenaQuatro();
+
+        Funcoes.cenaCinco();
     }
 }
