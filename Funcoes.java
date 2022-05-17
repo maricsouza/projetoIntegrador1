@@ -215,4 +215,9 @@ public class Funcoes {
         }
     }
 
+
+    public static void cenaTres () {
+        
+    }
+
 }
