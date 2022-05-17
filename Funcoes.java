@@ -166,8 +166,6 @@ public class Funcoes {
 
     }
 
-
-
     public static void cenaDois () {
         try {
 
@@ -215,8 +213,8 @@ public class Funcoes {
         }
     }
 
-
     public static void cenaTres () {
+
         try {
 
             int resposta = 0;
@@ -344,6 +342,98 @@ public class Funcoes {
 
         }
 
+    }
+
+    public static void cenaQuatro() {
+        try {
+
+            int resposta = 0;
+            voltar = 0;
+            String senha = "";
+            boolean senhaCorr = false;
+            String textCenaQuatro = "A porta que antes Merlin havia entrado no quarto estava diferente, a porta agora e mal-acabada e parece velha, o jogador decide abrir e entrar. Ao entrar ele se depara com o que parece ser o lado de dentro de uma cabana de ferramentas cheia de tralhas e a porta que estava atras dele nao esta mais ali, o deixando sem saida. Nesse comodo tem uma mesa bem elegante no mesmo estilo do quarto de Merlin, com adornos dourados e entalhes bonitos, em cima dela tem uma caixa que possui uma fechadura, ao lado um bilhete na mesa escrito: " + AMARELO + "Lembrete: Nao esqueca do dia dela" + BRANCO + ". Ao olhar mais em volta ele ve um calendario. \nO que voce deseja fazer?";
+            String opcoesCenaT[] = {"Ir ate a caixa", "Ir ate o calendario"};
+            String opVolt[] = {"Voltar"};
+            String opcCaixa[] = {"Digitar senha", opVolt[0]};
+            String opAvan[] = {"Avancar"};
+
+            limparTela();
+
+            do {
+
+                voltar++;
+
+                resposta = perguntaResposta(textCenaQuatro, opcoesCenaT);
+
+                if (validator(resposta) || resposta > opAvan.length) {
+                    limparTela();
+                    System.out.println(VERMELHO + "Resposta invalida");
+                    voltar = 0;
+                } 
+
+                switch (resposta) {
+                    case 1:
+                        limparTela();
+                        while (senhaCorr == false || voltar == 1) {
+
+                            resposta = perguntaResposta("A fechadura possui uma senha de 4 digitos. \nQual a a senha?", opcCaixa);
+
+                            if (resposta == 1) {
+                                System.out.print("Digite a senha: ");
+                                senha = console.readLine();
+    
+                                    if (senha.equals("1406")) {
+                                        limparTela();
+                                        senhaCorr = true;
+                                        resposta = perguntaResposta("O jogador coloca os numeros da data marcada no calendario (1402) na senha e a fechadura se abre. Dentro da caixa tinha mais um pedaço de espelho, no qual ele pega" + VERDE + "(Voce obteve o fragmento de espelho 2!)" + BRANCO + " e algo escrito no fundo da caixa:" + VERMELHO + " Mais uma vez o papai nao veio. " + BRANCO + " Uma porta aparece, a mesma porta do quarto de Merlin, ele entra e coloca mais um pedaco no espelho. A nevoa fica cada vez mais fraca, mas ainda tem dificuldade de ver o rosto.", opAvan);
+
+                                        if (resposta == 1) {
+                                            voltar = 0;
+                                            // return;
+                                        }
+                                    
+                                    } else {
+                                        limparTela();
+                                        System.out.println(VERMELHO + "Resposta incorreta. Tente novamente.");
+                                        voltar = 1;
+                                    }
+    
+                            } else if (resposta == 2) {
+                                limparTela();
+                                voltar = 0;
+                                break;
+
+                            } else {
+                                limparTela();
+                                System.out.println(VERMELHO + "Resposta invalida.");
+                                voltar = 1;
+                            }
+
+                        }
+
+                        break;
+                        
+                    case 2:
+                        limparTela();
+                        resposta = perguntaResposta("Calendario do ano de 2006, no dia 14 de fevereiro" + VERMELHO + "(14/02)" + BRANCO + " tem um nome escrito: " + AMARELO +  "Olivia." + BRANCO, opVolt);
+
+                        if (resposta == 1) {
+                            voltar = 0;
+                        }
+
+                        break;
+
+                }
+
+                voltar++;
+
+
+            } while (voltar == 0);
+
+
+        } catch(Exception ex) {
+            ex.printStackTrace();
+        }
     }
 
 }
