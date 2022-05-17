@@ -541,6 +541,19 @@ public class Funcoes {
         }
     }
 
-    
+    public static void cenaSeis() {
+        try {
+
+            String textSeisA = "O espelho esta quase completo, mas ainda parece faltar um ultimo pedaco e o nevoa abaixa mais uma vez, mas ainda nao dando para identificar o rosto. Dessa vez a porta nao mudou, mas ela esta entreaberta, mas e muito escuro para poder enxergar la dentro. De repente um barulho de vidro quebrando vem de dentro do lugar.";
+            String textSeisB = "Ao entrar o quarto esta escuro somente com a luz da tela de um computador antigo que esta em cima de uma mesa de escritorio, a mesa tem duas gavetas olhando na primeira gaveta tem muitos remedios e comprimidos, mas nada alem disso, na gaveta de baixo tem alguns papeis com anotacoes de trabalho e um caderno pequeno, ao pegar o caderno e olhar tem uma unica coisa escrita nele:" + AMARELO + "Usuario: MerlinLM \nSenha: 041053"+ BRANCO + ".";
+            String textSeisC = "Em cima, além do notebook ligado, ao lado tem um porta retrato com uma foto de uma garotinha, olhando o chão há cacos de vidro espalhados, como se algo tivesse sido jogado e quebrado. Ao usar o usuário e a senha no notebook ele é desbloqueado, logo de começo temos um e-mail aberto, “devido as circunstâncias da empresa e de problemas administrativos, estamos o desligando. Agradecemos o seu serviço. suporte@agenciamv.com” e alguns arquivos na área de trabalho:" + AMARELO + " img1.png, img2.png e img3.png." + BRANCO;
+            String opAvan [] = {"Avancar"};
+            String opVoltar[] = {"Voltar"};
+
+
+        } catch(Exception ex) {
+            ex.printStackTrace();
+        }
+    }
 
 }
