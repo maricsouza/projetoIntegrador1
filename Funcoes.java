@@ -247,12 +247,16 @@ public class Funcoes {
 
                 } else {
                     limparTela();
+                    System.out.println();
                     System.out.println("Seguindo o corredor dos quartos ele acha o número indicado do papel, a porta era a única diferente, bem elegante e bonita, de madeira escura e envernizada, do lado da porta tem uma mesa tambem muito elegante, no mesmo estilo da porta, cheia de entalhes bonitos e adornos dourados, em cima tem um copo com agua e ao lado tem uma cartela de comprimidos vazia e a ficha do paciente. O jogador pega a ficha para analisar: \n || FICHA DE OBITO ||");
                     for (int i = 0; i < fichaMerlin.length; i++) {
                         System.out.println(fichaMerlin[i]);
                     }
 
+                    System.out.println("||||||||||||||||||||||||||||||||||||");
+
                     System.out.println("1. " + opAvan[0]);
+                    System.out.print("Selecione uma opcao 1/1: ");
                     resposta = scanner.nextInt();
 
                     if (validator(resposta) || resposta > opAvan.length) {
@@ -279,12 +283,12 @@ public class Funcoes {
                         case 1:
                             limparTela();
                             if (fragmentoUm == true) {
+                                limparTela();
                                 resposta = perguntaResposta(moldOp, opAvan);
+                                voltar = 0;
                             } else {
                                 limparTela();
-                                System.out.println("Apenas uma moldura de espelho.");
-                                System.out.println("1. Voltar");
-                                resposta = scanner.nextInt();
+                                perguntaResposta("Apenas uma moldura de espelho.", opVolt);
                                 if (resposta == 1) {
                                     limparTela();
                                     voltar = 1;
@@ -313,6 +317,12 @@ public class Funcoes {
                                 }
 
                                 break;
+
+                                case 2: 
+                                    limparTela();
+                                    voltar = 1;
+
+                                    break;
                             }
 
 
