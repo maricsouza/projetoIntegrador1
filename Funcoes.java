@@ -3,6 +3,7 @@ import java.util.Scanner;
 
 public class Funcoes {
 
+
     private static Scanner scanner = new Scanner(System.in);
     private static Console console = System.console();
     private static final String VERMELHO = "\u001B[31m";
@@ -539,4 +540,7 @@ public class Funcoes {
             ex.printStackTrace();
         }
     }
+
+    
+
 }
