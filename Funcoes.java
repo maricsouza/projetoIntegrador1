@@ -388,8 +388,7 @@ public class Funcoes {
                                         resposta = perguntaResposta("O jogador coloca os numeros da data marcada no calendario (1402) na senha e a fechadura se abre. Dentro da caixa tinha mais um pedaço de espelho, no qual ele pega" + VERDE + "(Voce obteve o fragmento de espelho 2!)" + BRANCO + " e algo escrito no fundo da caixa:" + VERMELHO + " Mais uma vez o papai nao veio. " + BRANCO + " Uma porta aparece, a mesma porta do quarto de Merlin, ele entra e coloca mais um pedaco no espelho. A nevoa fica cada vez mais fraca, mas ainda tem dificuldade de ver o rosto.", opAvan);
 
                                         if (resposta == 1) {
-                                            voltar = 0;
-                                            // return;
+                                            voltar++;
                                         }
                                     
                                     } else {
@@ -418,14 +417,13 @@ public class Funcoes {
                         resposta = perguntaResposta("Calendario do ano de 2006, no dia 14 de fevereiro" + VERMELHO + "(14/02)" + BRANCO + " tem um nome escrito: " + AMARELO +  "Olivia." + BRANCO, opVolt);
 
                         if (resposta == 1) {
+                            limparTela();
                             voltar = 0;
                         }
 
                         break;
 
                 }
-
-                voltar++;
 
 
             } while (voltar == 0);
@@ -451,12 +449,85 @@ public class Funcoes {
             limparTela();
             do {
 
+                voltar++;
+
                 resposta = perguntaResposta(textCinco, opcCinco);
 
                 if (validator(resposta) || resposta > opcCinco.length){
                     limparTela();
                     System.out.println(AMARELO + "Resposta nao permitida. ");
                     voltar = 0;
+                }
+
+               switch(resposta) {
+                   case 1:
+                        limparTela();
+                        while (voltar == 1) {
+                            resposta = perguntaResposta("Na cama em si nao ha nada demais, bem arrumada e organizada com algumas pelucias em cima, olhando em baixo, o jogador se depara com uma caixa de madeira muito elegante. ", opCama);
+
+                            if (validator(resposta) || resposta > opCama.length){
+                                limparTela();
+                                System.out.println(AMARELO + "Resposta nao permitida. ");
+                                voltar = 1;
+                            }
+
+                            switch(resposta) {
+                                case 1:
+                                    limparTela();
+
+                                    if (chave == true) {
+                                        resposta = perguntaResposta("Abrindo a caixa com a chave" + VERDE + " (Chave da caixa foi usada!)" + BRANCO + ", tinha mais um fragmento de espelho dentro, a porta do quarto de Merlin reaparece.", opAvan);
+
+                                        if(resposta == 1) {
+                                            limparTela();
+                                            voltar++;
+                                        }
+
+                                    } else {
+                                        resposta = perguntaResposta("A caixa precisa de uma chave.", opVolt);
+
+                                        if(resposta == 1) {
+                                            limparTela();
+                                            voltar = 1;
+                                        }
+
+                                    }
+
+                                    break; 
+
+                                case 2:
+                                    limparTela();
+                                    voltar = 0;
+                                    break;
+                            }
+
+                        }
+
+                        break;
+
+                   case 2:
+                        limparTela();
+                        resposta = perguntaResposta("Olhando a mesa, ele ve um desenho em uma das folhas, ao que parece ser uma familia, uma figura feminina alta segurando a mao de uma outra figura feminina so que mais baixa e com um rosto triste desenhado e uma figura masculina ao lado das duas com o rosto rabiscado, no outro desenho tem um armario e a mesma figura feminina menor dentro dele e com o rosto triste, do lado uma janela e parece estar chovendo pelos riscos nela. ", opVolt);
+
+                        if (resposta == 1) {
+                            limparTela();
+                            voltar = 0;
+                        }
+
+                        break;
+
+                   case 3:
+                        limparTela();
+                        resposta = perguntaResposta("Ele abre a porta do guarda-roupa, esta vazio, mas tem algo escrito na madeira, como se tivesse sido raspado:" + VERMELHO + " to com medo" + BRANCO + ", instantaneamente comeca uma chuva forte, seguido de um trovao, algo cai de cima do guarda-roupa, ao olhar mais de perto, ele se depara com uma chave," + VERDE + " (obteve: Chave da caixa). " + BRANCO, opVolt);
+                        chave = true;
+
+                        if (resposta == 1) {
+                            limparTela();
+                            voltar = 0;
+                        }
+
+                        break;
+
                }
 
 
