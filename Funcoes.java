@@ -453,7 +453,7 @@ public class Funcoes {
 
                 resposta = perguntaResposta(textCinco, opcCinco);
 
-                if (validator(resposta) || resposta > opUm.length){
+                if (validator(resposta) || resposta > opcCinco.length){
                     limparTela();
                     System.out.println(AMARELO + "Resposta nao permitida. ");
                     voltar = 0;
