@@ -7,5 +7,6 @@ class Jogo {
         Funcoes.limparTela();
         Funcoes.cenaUm();
         Funcoes.cenaDois();
+        Funcoes.cenaTres();
     }
 }
