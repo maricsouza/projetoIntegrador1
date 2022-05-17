@@ -69,10 +69,10 @@ public class Funcoes {
             
             int resposta = 0;
             boolean chave = false;
-            String textoInicial = "O jogador acorda em um quarto escuro, onde a unica fonte de luz e uma lamparina que esta ao lado dele, ele a pega para iluminar mais o local, junto a ela havia uma chave. Em um dos cantos desse quarto, ele observa algo escondido por um pano o cobrindo e ao norte ha uma porta fechada. \nO que voce deseja fazer?";
-            String opUm [] = {"Pegar chave", "Ir ate o canto do quarto", "Ir ate e abrir a porta"};
+            String textoInicial = "╔═════════════════════════════════════════════════════════════════════════╗\n║ O jogador acorda em um quarto escuro, onde a unica fonte de luz e uma   ║\n║ lamparina que esta ao lado dele, ele a pega para iluminar mais o local, ║\n║ junto a ela havia uma chave. Em um dos cantos desse quarto, ele observa ║\n║ algo escondido por um pano o cobrindo e ao norte ha uma porta fechada.  ║\n╚═════════════════════════════════════════════════════════════════════════╝ \n O que voce deseja fazer?";
+            String opUm [] = {" 1- Pegar chave", " 2- Ir ate o canto do quarto", " 3- Ir ate a porta e tentar abir"};
             String caixaM = "Ele vai ate o canto onde ele viu algo e tira o pano de cima, revelando uma caixa pequena de madeira."; 
-            String caixM[] = {"Abrir caixa", "Voltar"};
+            String caixM[] = {"1- Abrir caixa", "2- Voltar"};
 
             do {
 
@@ -119,7 +119,7 @@ public class Funcoes {
                             case 1:
                                 limparTela();
                                 if (papelDirecoes == false) {
-                                    System.out.println(BRANCO + "Ele abre a caixa, dentro ele encontra um papel com direcoes escritas em uma ordem:" + VERMELHO + "esquerda-direita-direita-esquerda-direita" + BRANCO + " e logo em seguida esta escrito:" + VERMELHO + " Nao se perca." + VERDE + "\n" + "Voce obteve um papel com direcoes!");
+                                    System.out.println(BRANCO + "╔══════════════════════════════════════════════════════════════════════╗\n║ Ele abre a caixa, dentro ele encontra um papel com direcoes escritas ║\n║ em uma ordem:" + VERMELHO + "esquerda-direita-direita-esquerda-direita" + BRANCO + " e logo em  ║\n║ seguida esta escrito:" + VERMELHO + " Nao se perca.                                ║\n╚══════════════════════════════════════════════════════════════════════╝" + VERDE + "\n" + "(Voce obteve um papel com direcoes!)");
                                     papelDirecoes = true;
                                     
                                     
