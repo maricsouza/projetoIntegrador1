@@ -6,15 +6,17 @@ class Jogo {
     public static void main (String [] args ) {
         Funcoes.limparTela();
 
-        // Funcoes.cenaUm();
+        Funcoes.cenaUm();
 
-        // Funcoes.cenaDois();
+        Funcoes.cenaDois();
 
-        // Funcoes.cenaTres();
+        Funcoes.cenaTres();
 
-        // Funcoes.cenaQuatro();
+        Funcoes.cenaQuatro();
 
-        // Funcoes.cenaCinco();
+        Funcoes.cenaCinco();
+
+        Funcoes.cenaSeis();
 
         Funcoes.cenaFinal();
     }

@@ -74,7 +74,7 @@ public class Funcoes {
             String textoInicial = "O jogador acorda em um quarto escuro, onde a unica fonte de luz e uma lamparina que esta ao lado dele, ele a pega para iluminar mais o local, junto a ela havia uma chave. Em um dos cantos desse quarto, ele observa algo escondido por um pano o cobrindo e ao norte ha uma porta fechada.\n O que voce deseja fazer?";
             String opUm [] = {"Pegar chave", "Ir ate o canto do quarto", "Ir ate a porta e tentar abrir"};
             String caixaM = "Ele vai ate o canto onde ele viu algo e tira o pano de cima, revelando uma caixa pequena de madeira."; 
-            String caixM[] = {"1- Abrir caixa", "2- Voltar"};
+            String caixM[] = {"Abrir caixa", "Voltar"};
 
             do {
 
