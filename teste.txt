@@ -1,0 +1,103 @@
+public static void main () {
+        try {
+            
+            int resposta = 0;
+            boolean chave = false;
+            String textoInicial = "╔═════════════════════════════════════════════════════════════════════════╗\n║ O jogador acorda em um quarto escuro, onde a unica fonte de luz e uma   ║\n║ lamparina que esta ao lado dele, ele a pega para iluminar mais o local, ║\n║ junto a ela havia uma chave. Em um dos cantos desse quarto, ele observa ║\n║ algo escondido por um pano o cobrindo e ao norte ha uma porta fechada.  ║\n╚═════════════════════════════════════════════════════════════════════════╝ \n O que voce deseja fazer?";
+            String opUm [] = {" 1- Pegar chave", " 2- Ir ate o canto do quarto", " 3- Ir ate a porta e tentar abir"};
+            String caixaM = "Ele vai ate o canto onde ele viu algo e tira o pano de cima, revelando uma caixa pequena de madeira."; 
+            String caixM[] = {"1- Abrir caixa", "2- Voltar"};
+
+            do {
+
+                voltar = 0;
+                voltar++;
+
+               resposta = perguntaResposta(textoInicial, opUm);
+
+               if (validator(resposta) || resposta > opUm.length){
+                    limparTela();
+                    System.out.println(AMARELO + "Resposta nao permitida. ");
+                    voltar = 0;
+               } 
+
+               switch (resposta) {
+                   case 1:
+
+                        limparTela();
+
+                        if (chave == false) {
+                            System.out.println(VERDE + ("Voce pegou a chave."));
+                            voltar = 0;
+                            chave = true;
+                        } else {
+                            System.out.println(AMARELO +"Voce ja pegou a chave");
+                            voltar = 0;
+                        }
+                        break;
+
+                   case 2:
+
+                        limparTela();
+
+                        resposta = perguntaResposta(caixaM, caixM);
+
+                        if (validator(resposta) || resposta > opUm.length){
+                            limparTela();
+                            System.out.println(AMARELO + "Resposta nao permitida. ");
+                            voltar = 0;
+                        } 
+
+                        switch (resposta) {
+
+                            case 1:
+                                limparTela();
+                                if (papelDirecoes == false) {
+                                    System.out.println(BRANCO + "╔══════════════════════════════════════════════════════════════════════╗\n║ Ele abre a caixa, dentro ele encontra um papel com direcoes escritas ║\n║ em uma ordem:" + VERMELHO + "esquerda-direita-direita-esquerda-direita" + BRANCO + " e logo em  ║\n║ seguida esta escrito:" + VERMELHO + " Nao se perca.                                ║\n╚══════════════════════════════════════════════════════════════════════╝" + VERDE + "\n" + "(Voce obteve um papel com direcoes!)");
+                                    papelDirecoes = true;
+                                    
+                                    
+                                } else {
+                                    System.out.println(AMARELO + "Voce ja abriu a caixa.");
+                                }
+                                    voltar = 0;
+                                    break;
+
+                            case 2:
+                                limparTela();
+                                voltar = 0;
+                                break;
+
+                            default:
+                                voltar = 0;
+                                break;
+                        }
+
+                        break;
+
+
+                   case 3: 
+                        limparTela();
+                        if (chave == false){
+                             
+                            System.out.println(AMARELO + "A porta esta trancada.");
+                            voltar = 0;
+                        }else
+                            voltar++;
+
+                        break;
+
+                   default:
+                        voltar = 0;
+               }
+                
+
+            } while (voltar == 0);
+
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+
+
+    }
+}

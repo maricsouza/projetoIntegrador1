@@ -1,6 +1,8 @@
 import java.io.Console;
 import java.util.Scanner;
 
+import javax.lang.model.util.ElementScanner14;
+
 public class Funcoes {
 
 
@@ -69,8 +71,8 @@ public class Funcoes {
             
             int resposta = 0;
             boolean chave = false;
-            String textoInicial = "╔═════════════════════════════════════════════════════════════════════════╗\n║ O jogador acorda em um quarto escuro, onde a unica fonte de luz e uma   ║\n║ lamparina que esta ao lado dele, ele a pega para iluminar mais o local, ║\n║ junto a ela havia uma chave. Em um dos cantos desse quarto, ele observa ║\n║ algo escondido por um pano o cobrindo e ao norte ha uma porta fechada.  ║\n╚═════════════════════════════════════════════════════════════════════════╝ \n O que voce deseja fazer?";
-            String opUm [] = {" 1- Pegar chave", " 2- Ir ate o canto do quarto", " 3- Ir ate a porta e tentar abir"};
+            String textoInicial = "O jogador acorda em um quarto escuro, onde a unica fonte de luz e uma lamparina que esta ao lado dele, ele a pega para iluminar mais o local, junto a ela havia uma chave. Em um dos cantos desse quarto, ele observa algo escondido por um pano o cobrindo e ao norte ha uma porta fechada.\n O que voce deseja fazer?";
+            String opUm [] = {"Pegar chave", "Ir ate o canto do quarto", "Ir ate a porta e tentar abrir"};
             String caixaM = "Ele vai ate o canto onde ele viu algo e tira o pano de cima, revelando uma caixa pequena de madeira."; 
             String caixM[] = {"1- Abrir caixa", "2- Voltar"};
 
@@ -119,7 +121,7 @@ public class Funcoes {
                             case 1:
                                 limparTela();
                                 if (papelDirecoes == false) {
-                                    System.out.println(BRANCO + "╔══════════════════════════════════════════════════════════════════════╗\n║ Ele abre a caixa, dentro ele encontra um papel com direcoes escritas ║\n║ em uma ordem:" + VERMELHO + "esquerda-direita-direita-esquerda-direita" + BRANCO + " e logo em  ║\n║ seguida esta escrito:" + VERMELHO + " Nao se perca.                                ║\n╚══════════════════════════════════════════════════════════════════════╝" + VERDE + "\n" + "(Voce obteve um papel com direcoes!)");
+                                    System.out.println(BRANCO + "Ele abre a caixa, dentro ele encontra um papel com direcoes escritas em uma ordem:" + VERMELHO + "esquerda-direita-direita-esquerda-direita" + BRANCO + " e logo em seguida esta escrito:" + VERMELHO + " Nao se perca." + VERDE + "\n" + "(Voce obteve um papel com direcoes!)");
                                     papelDirecoes = true;
                                     
                                     
@@ -544,11 +546,161 @@ public class Funcoes {
     public static void cenaSeis() {
         try {
 
+            int resposta = 0;
+            voltar = 0;
+            boolean senha2 = true;
+            String senha = "";
             String textSeisA = "O espelho esta quase completo, mas ainda parece faltar um ultimo pedaco e o nevoa abaixa mais uma vez, mas ainda nao dando para identificar o rosto. Dessa vez a porta nao mudou, mas ela esta entreaberta, mas e muito escuro para poder enxergar la dentro. De repente um barulho de vidro quebrando vem de dentro do lugar.";
             String textSeisB = "Ao entrar o quarto esta escuro somente com a luz da tela de um computador antigo que esta em cima de uma mesa de escritorio, a mesa tem duas gavetas olhando na primeira gaveta tem muitos remedios e comprimidos, mas nada alem disso, na gaveta de baixo tem alguns papeis com anotacoes de trabalho e um caderno pequeno, ao pegar o caderno e olhar tem uma unica coisa escrita nele:" + AMARELO + "Usuario: MerlinLM \nSenha: 041053"+ BRANCO + ".";
-            String textSeisC = "Em cima, além do notebook ligado, ao lado tem um porta retrato com uma foto de uma garotinha, olhando o chão há cacos de vidro espalhados, como se algo tivesse sido jogado e quebrado. Ao usar o usuário e a senha no notebook ele é desbloqueado, logo de começo temos um e-mail aberto, “devido as circunstâncias da empresa e de problemas administrativos, estamos o desligando. Agradecemos o seu serviço. suporte@agenciamv.com” e alguns arquivos na área de trabalho:" + AMARELO + " img1.png, img2.png e img3.png." + BRANCO;
+            String textSeisC = "Em cima, alem do notebook ligado, ao lado tem um porta retrato com uma foto de uma garotinha. Olhando o chao, ha cacos de vidro espalhados, como se algo tivesse sido jogado e quebrado. Ao usar o usuario e a senha no notebook ele e desbloqueado, tendo assim logo de comeco um e-mail aberto:" + AMARELO +  "Devido as circunstancias da empresa e de problemas administrativos, estamos o desligando. Agradecemos o seu servico. suporte@agenciamv.com" + BRANCO +  "e alguns arquivos na área de trabalho:" + AMARELO + " img1.png, img2.png e img3.png." + BRANCO;
             String opAvan [] = {"Avancar"};
             String opVoltar[] = {"Voltar"};
+            String opSenha[] = {"Digite a senha", "Voltar"};
+            String optxC[] = {"Ver img1.png", "Ver img2.png", "Ver img3.png"};
+
+            do {
+
+                voltar++;
+
+                resposta = perguntaResposta(textSeisA, opAvan);
+                if (validator(resposta) || resposta > opAvan.length){
+                    limparTela();
+                    System.out.println(AMARELO + "Resposta nao permitida. ");
+                    voltar = 0;
+                } else {
+                    limparTela();
+                    resposta = perguntaResposta(textSeisB, opAvan);
+                }
+
+                if (validator(resposta) || resposta > opAvan.length){
+                    limparTela();
+                    System.out.println(AMARELO + "Resposta nao permitida. ");
+                    voltar = 0;
+                } 
+
+                limparTela();
+
+                while (voltar == 1) {
+
+                    resposta = perguntaResposta(textSeisC, optxC);
+
+                    if (validator(resposta) || resposta > optxC.length){
+                        limparTela();
+                        System.out.println(AMARELO + "Resposta nao permitida. ");
+                        voltar = 1;
+
+                        break;
+                    } else {
+                        switch (resposta) {
+                            case 1:
+                                limparTela();
+                                resposta = perguntaResposta(AMARELO + "img1.png:" + BRANCO + " uma imagem de um porta retrato com uma foto de uma garotinha e tem algo escrito no canto da imagem: " + VERMELHO + "OLIVIA. " + BRANCO, opVoltar);
+                                if (resposta == 1) {
+                                    limparTela();
+                                    voltar = 1;
+                                }
+                                break;
+
+                            case 2:
+                                limparTela();
+                                resposta = perguntaResposta("A imagem possui senha.", opSenha);
+
+                                if (validator(resposta) || resposta > opSenha.length){
+                                    limparTela();
+                                    System.out.println(AMARELO + "Resposta nao permitida. ");
+                                    voltar = 1;
+                                    break;
+                                } 
+
+                                switch (resposta) {
+                                    case 1:
+                                        System.out.print("Digite a senha: ");
+                                        senha = console.readLine();
+
+                                        if(senha.equalsIgnoreCase("Olivia")) {
+                                            limparTela();
+                                            resposta = perguntaResposta(AMARELO + "img2.png: " + BRANCO + "A parte de tras de um porta-retrato com uma chave colada e tem algo escrito no canto da imagem:" + VERMELHO + "AMELIA." + BRANCO, opVoltar);
+
+                                            if ( resposta == 1 ) {
+                                                limparTela();
+                                                voltar = 1;
+                                                break;
+                                            }
+
+                                        } else {
+                                            limparTela();
+                                            System.out.println(VERMELHO + "Senha incorreta.");
+                                            voltar = 1;
+                                        }
+
+                                        break;
+
+                                    case 2:
+                                        limparTela();
+                                        voltar = 1;
+                                       
+                                        
+
+                                }
+
+                                break;
+
+
+
+                            case 3:
+
+                                limparTela();
+                                resposta = perguntaResposta("A imagem possui senha.", opSenha);
+
+                                if (validator(resposta) || resposta > opSenha.length){
+                                    limparTela();
+                                    System.out.println(AMARELO + "Resposta nao permitida. ");
+                                    voltar = 1;
+                                    break;
+                                }
+
+                                switch (resposta) {
+                                    case 1:
+                                        System.out.print("Digite a senha: ");
+                                        senha = console.readLine();
+
+                                        if(senha.equalsIgnoreCase("Amelia")) {
+                                            limparTela();
+                                            resposta = perguntaResposta(AMARELO + "img3.png: " + VERMELHO + "Uma porta de madeira fechada." + BRANCO , opAvan);
+                                            voltar++;
+
+                                            if ( resposta == 1 ) {
+                                                limparTela();
+                                                break;
+                                            }
+
+                                        } else {
+                                            limparTela();
+                                            System.out.println(VERMELHO + "Senha incorreta.");
+                                            voltar = 1;
+                                        }
+
+                                        break;
+
+                                    case 2:
+                                        limparTela();
+                                        voltar = 1;
+                                        break;
+
+                                }
+
+                                break;
+                        }
+                    }
+
+
+                }
+
+
+
+
+
+            } while(voltar == 0);
 
 
         } catch(Exception ex) {
