@@ -16,6 +16,6 @@ class Jogo {
 
         // Funcoes.cenaCinco();
 
-        Funcoes.cenaSeis();
+        Funcoes.cenaFinal();
     }
 }

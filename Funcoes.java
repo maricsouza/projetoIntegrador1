@@ -693,11 +693,7 @@ public class Funcoes {
                         }
                     }
 
-
                 }
-
-
-
 
 
             } while(voltar == 0);
@@ -708,5 +704,76 @@ public class Funcoes {
         }
     }
 
+    public static void cenaFinal() {
+        try {
+
+            voltar = 0;
+            int resposta = 0;
+            String textFinalA = "Depois de ver a ultima imagem, a porta se fecha com forca. Ao analisar o porta-retrato novamente, tem uma chave logo atras. A porta que estava trancada agora pode ser aberta. Uma sala completamente vazia, apenas com uma mesa no meio e uma luz vinda de cima a iluminando, em cima da mesa tem mais um pedaço do espelho" + VERDE + "(obteve: Fragmento de espelho). " + BRANCO;
+            String textFinalB = "A luz se apaga o deixando no completo escuro, logo em seguida uma outra luz acende iluminando uma porta ao longe, a porta do quarto de Merlin. Entrando na porta, agora temos a presenca de duas entidades: uma crianca e uma mulher ao lado da cama de Merlin olhando para ele, elas te ignoram mesmo tentando interagir. Colocando o ultimo fragmento a nevoa some.";
+            String textFinalC = "Tudo fica escuro, no fundo uma reportagem tocando em um radio:" + AMARELO + "Merlin Lennox Marino foi encontrado desacordado nessa manha de segunda-feira, dia 5 de fevereiro de 2017. Perto dele havia um copo com agua e ao lado uma cartela de comprimidos vazia. Uma carta de desabafo estava junto com a cartela de comprimidos. Apos isso ele foi levado para o hospital mais proximo, mas acabou nao resistindo."+ BRANCO + " \nAgora o silencio toma conta... \n\n\n\n\n\n\n Ler a carta?";
+            String respOp [] = {"Sim", "Nao"};
+            String cartaMerlinA = AMARELO + "Viver por viver. O que tenho a aproveitar de uma vida assim? Vivi a vida trabalhando dia e noite, evitando folgas e sempre me empolgava quando meu chefe pedia para fazer algo a mais, e no final acabei sendo despedido. Ignorava qualquer coisa que nao fosse trabalho, eu apenas estava afim de ganhar a vida o mais rapido o possivel que virou rotina trabalhar diariamente e viver para o trabalho. Eu achei que estava dando o melhor para os meus. Uma casa, um conforto, tudo que eles precisavam... Mas, e eu? Peço perdao, Olivia. O papai nao pode estar em nenhum dos seus aniversarios. O papai mal estava presente em casa. Peco perdao, querida. Você se casou com uma maquina que esqueceu o que a amor. Voce sempre estava ali por mim, quando eu estava chorando, quando eu estava feliz, mas eu nem sequer lembrei a data do seu aniversario quando ele chegou, e voce nao teve nem mesmo um bolo. Agradeco por comemorar os anos da minha filha e nao deixar ela passar pelo que te fiz passar. Querida, voce deve ter sofrido muito por estar com alguem como eu.";
+            String cartaMerlinB = AMARELO + "Do que adianta ter um bom trabalho, boas roupas, uma boa casa se eu nao pude aproveitar coisas simples que eu podia ter aproveitado? Pra que eu me casei, afinal? E tive uma filha?! E como se eu nunca tivesse feito isso. As dei conforto e achei que era o suficiente. Eu sei que nunca e o suficiente. E como um copo pronto para transbordar a qualquer momento. Como pude nao estar presente nos momentos mais importantes daqueles que eu chamo de familia todo dia?! Nao vi seu primeiro dente nascer, Olivia. Nao vi seu parto, amor. E eu me arrependo amargamente de tudo isso. Construi uma familia e perdi a honra de poder ser chamado pai. Eu peco perdao, peco desculpas e sei que nao mereco perdao. \nPeco perdao por ir assim, mas nao sintam minha falta. Apenas nao facam o que fiz. \nNao vivam em vao. Voces sao meu tudo.\nEstarei feliz se voces estiverem tambem.\nMas agora, esse mundo nao serve mais para mim. Minha hora chegou.\nApenas continuem vivendo. O senhor Merlin ama voces.";
+            String opAvan[] = {"Avancar"};
+
+            limparTela();
+
+            do {
+
+                voltar++;
+
+                resposta = perguntaResposta(textFinalA, opAvan);
+                if (resposta == 1) {
+                    limparTela();
+                    resposta = perguntaResposta(textFinalB, opAvan);
+                    
+                    if (resposta == 1) {
+                        limparTela();
+                        resposta = perguntaResposta("E voce. \n\n\n\n\n\n", opAvan);     
+                    }
+                }
+
+                limparTela();
+
+                if (resposta == 1) {
+                    resposta = perguntaResposta(textFinalC, respOp);
+
+                    switch (resposta) {
+                        case 1:
+                            limparTela();
+                            resposta = perguntaResposta(cartaMerlinA + "\n\n\n\n", opAvan);
+
+                            if (resposta == 1) {
+                                limparTela();
+                                resposta = perguntaResposta(cartaMerlinB + "\n\n\n\n", opAvan);
+
+                                if( resposta == 1) {
+                                    limparTela();
+                                    System.out.println("E o silencio se formou.");
+
+                                    break;
+                                }
+                            }
+
+                            break;
+
+
+                        case 2:
+                            limparTela();
+                            System.out.println("E o silencio se formou.");
+                            break;
+                    }
+
+
+                }
+
+
+            } while (voltar == 0);
+
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+    }
 
 }
