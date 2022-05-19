@@ -26,6 +26,16 @@ public class Funcoes {
             ex.printStackTrace();
         }
     }
+    
+    public static void abrirCmd () {
+        try {
+
+            new ProcessBuilder("cmd").inheritIO().start().waitFor();
+
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+    }
 
     public static int perguntaResposta (String texto, String opcoes []) {
 
