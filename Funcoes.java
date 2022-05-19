@@ -1,8 +1,6 @@
 import java.io.Console;
 import java.util.Scanner;
 
-import javax.lang.model.util.ElementScanner14;
-
 public class Funcoes {
 
 
@@ -222,7 +220,6 @@ public class Funcoes {
 
             int resposta = 0;
             voltar = 0;
-            int voltarTres = 0;
             boolean fragmentoUm = false;
             String textCenaTres = "O jogador chega em uma escada que da direto para uma recepcao de um hospital, ele esta vazio e bem sombrio, somente com uma atendente no balcao. O jogador se dirige ate a atendente e ela simplesmente o entrega um papel escrito:" + VERMELHO + "Quarto 13" + BRANCO + ". O jogador tenta contato, mas e completamente ignorado sempre que tenta conversar com a atendente. ";
             String opAvan [] = {"Avancar"};
@@ -548,7 +545,6 @@ public class Funcoes {
 
             int resposta = 0;
             voltar = 0;
-            boolean senha2 = true;
             String senha = "";
             String textSeisA = "O espelho esta quase completo, mas ainda parece faltar um ultimo pedaco e o nevoa abaixa mais uma vez, mas ainda nao dando para identificar o rosto. Dessa vez a porta nao mudou, mas ela esta entreaberta, mas e muito escuro para poder enxergar la dentro. De repente um barulho de vidro quebrando vem de dentro do lugar.";
             String textSeisB = "Ao entrar o quarto esta escuro somente com a luz da tela de um computador antigo que esta em cima de uma mesa de escritorio, a mesa tem duas gavetas olhando na primeira gaveta tem muitos remedios e comprimidos, mas nada alem disso, na gaveta de baixo tem alguns papeis com anotacoes de trabalho e um caderno pequeno, ao pegar o caderno e olhar tem uma unica coisa escrita nele:" + AMARELO + "Usuario: MerlinLM \nSenha: 041053"+ BRANCO + ".";
