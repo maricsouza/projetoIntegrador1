@@ -3,24 +3,28 @@ import java.util.Scanner;
 class Jogo {
 
     public static Scanner scanner = new Scanner(System.in);
+    
     public static void main (String [] args ) {
     	
-    	// Funcoes.abrirCmd();
-    	
-        Funcoes.limparTela();
+        try {
+            Funcoes.limparTela();
 
-        Funcoes.cenaUm();
+            Funcoes.cenaUm();
 
-        Funcoes.cenaDois();
+            Funcoes.cenaDois();
 
-        Funcoes.cenaTres();
+            Funcoes.cenaTres();
 
-        Funcoes.cenaQuatro();
+            Funcoes.cenaQuatro();
 
-        Funcoes.cenaCinco();
+            Funcoes.cenaCinco();
 
-        Funcoes.cenaSeis();
+            Funcoes.cenaSeis();
 
-        Funcoes.cenaFinal();
+            Funcoes.cenaFinal();
+
+        } catch( Exception ex) {
+            ex.printStackTrace();
+        }
     }
 }

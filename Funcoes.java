@@ -40,19 +40,31 @@ public class Funcoes {
     // }
 
     public static int perguntaResposta (String texto, String opcoes []) {
+        
+        int resposta = 0;
+        
+        try {
+            
+            
+            System.out.println(BRANCO + texto);
+            int tam = opcoes.length;
 
-        System.out.println(BRANCO + texto);
-        int tam = opcoes.length;
+            for (int i = 0; i < tam;  i++) {
+                System.out.println((i + 1) + ". " + opcoes[i]);
+            }
 
-        for (int i = 0; i < tam;  i++) {
-            System.out.println((i + 1) + ". " + opcoes[i]);
+            System.out.print(BRANCO + ("Selecione uma opcao entre 1/" + tam + ": "));
+
+            resposta = scanner.nextInt();
+
+            return resposta;
+
+        } catch (Exception ex) {
+            ex.printStackTrace();
+            return 0;
         }
 
-        System.out.print(BRANCO + ("Selecione uma opcao entre 1/" + tam + ": "));
-        int resposta = scanner.nextInt();
-
-
-        return resposta;
+        
     }
 
     public static boolean validator (int valor) {
@@ -246,8 +258,6 @@ public class Funcoes {
 
             do {
 
-                voltar++;
-
                 resposta = perguntaResposta(textCenaTres, opAvan);
 
                 if (validator(resposta) || resposta > opAvan.length) {
@@ -256,6 +266,8 @@ public class Funcoes {
                     voltar = 0;
 
                 } else {
+
+                    voltar++;
                     limparTela();
                     System.out.println();
                     System.out.println("Seguindo o corredor dos quartos ele acha o número indicado do papel, a porta era a única diferente, bem elegante e bonita, de madeira escura e envernizada, do lado da porta tem uma mesa tambem muito elegante, no mesmo estilo da porta, cheia de entalhes bonitos e adornos dourados, em cima tem um copo com agua e ao lado tem uma cartela de comprimidos vazia e a ficha do paciente. O jogador pega a ficha para analisar: \n || FICHA DE OBITO ||");
@@ -275,12 +287,14 @@ public class Funcoes {
                         return;
                     }
 
+                    
+
                     limparTela();
 
                 } 
                 
-                do {
-
+                while (voltar == 1) {
+                    
                     resposta = perguntaResposta(merlinTexto, opTres);
 
                     if (validator(resposta) || resposta > opTres.length) {
@@ -340,9 +354,13 @@ public class Funcoes {
                     }
 
 
-                } while (voltar == 1);
                 
-                voltar++;
+                }
+
+                if(fragmentoUm == true) {
+                    voltar++;
+                }
+
 
             } while (voltar == 0);
 
