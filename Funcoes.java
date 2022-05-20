@@ -249,7 +249,7 @@ public class Funcoes {
             String opAvan [] = {"Avancar"};
             String opVolt [] = {"Voltar"};
             String opc [] = {"Ir ate moldura", opVolt[0]};
-            String fichaMerlin [] = {"Nome: Merlin ██████ ██████", "Quarto: 13", "Nacionalidade: Inglaterra/Ingles", "Altura: 1,78", "Genero: Masculino", "Nascimento: 04/10/1980", "Obito: 05/02/2017", "Idade: 37", "Tipo sanguineo: O –", "Esposa: ██████ █████ ██████","Nacionalidade da esposa: França/Francesa", "Filha: Olivia ██████ ██████", "Nacionalidade da filha: Inglaterra/Inglesa", " Pai: ███████ ██████", "Nacionalidade do Pai: Inglaterra/Inglês","Mãe: █████ ██████ ", "Nacionalidade da Mãe: Itália/Italiana", "-Causa da morte: ████████"};
+            String fichaMerlin [] = {"\n\n\nNome: Merlin ██████ ██████", "Quarto: 13", "Nacionalidade: Inglaterra/Ingles", "Altura: 1,78", "Genero: Masculino", "Nascimento: 04/10/1980", "Obito: 05/02/2017", "Idade: 37", "Tipo sanguineo: O –", "Esposa: ██████ █████ ██████","Nacionalidade da esposa: França/Francesa", "Filha: Olivia ██████ ██████", "Nacionalidade da filha: Inglaterra/Inglesa", " Pai: ███████ ██████", "Nacionalidade do Pai: Inglaterra/Inglês","Mãe: █████ ██████ ", "Nacionalidade da Mãe: Itália/Italiana", "-Causa da morte: ████████"};
             String merlinTexto = "Algumas coisas estavam riscadas nao podendo identificar, mas ele guarda a ficha consigo. O jogador abre a porta e entra, era um quarto bem arrumado, as decoracoes pareciam muito com o estilo da mesa do lado de fora, a cama era grande e, ao que parece ser Merlin deitado nela, seu rosto esta coberto por uma nevoa preta. Ao lado da cama tem uma moldura de espelho na parede. \nO que voce deseja fazer?";
             String opTres[] = {"Ir ate a moldura","Olhar o corpo"};
             String moldOp = "Ele encaixa um dos pedacos que ele pegou da mao de Merlin e a nevoa de seu rosto comeca a ficar mais fraca, mas ainda nao sendo possivel de identificar o seu rosto.";
@@ -270,12 +270,12 @@ public class Funcoes {
                     voltar++;
                     limparTela();
                     System.out.println();
-                    System.out.println("Seguindo o corredor dos quartos ele acha o número indicado do papel, a porta era a única diferente, bem elegante e bonita, de madeira escura e envernizada, do lado da porta tem uma mesa tambem muito elegante, no mesmo estilo da porta, cheia de entalhes bonitos e adornos dourados, em cima tem um copo com agua e ao lado tem uma cartela de comprimidos vazia e a ficha do paciente. O jogador pega a ficha para analisar: \n || FICHA DE OBITO ||");
+                    System.out.println("Seguindo o corredor dos quartos ele acha o número indicado do papel, a porta era a única diferente, bem elegante e bonita, de madeira escura e envernizada, do lado da porta tem uma mesa tambem muito elegante, no mesmo estilo da porta, cheia de entalhes bonitos e adornos dourados, em cima tem um copo com agua e ao lado tem uma cartela de comprimidos vazia e a ficha do paciente. O jogador pega a ficha para analisar: \n\n\n\n || FICHA DE OBITO ||");
                     for (int i = 0; i < fichaMerlin.length; i++) {
                         System.out.println(fichaMerlin[i]);
                     }
 
-                    System.out.println("||||||||||||||||||||||||||||||||||||");
+                    System.out.println("\n\n\n||||||||||||||||||||||||||||||||||||\n\n\n");
 
                     System.out.println("1. " + opAvan[0]);
                     System.out.print("Selecione uma opcao 1/1: ");
