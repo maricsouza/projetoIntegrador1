@@ -412,7 +412,7 @@ public class Funcoes {
                                 System.out.print("Digite a senha: ");
                                 senha = console.readLine();
     
-                                    if (senha.equals("1406")) {
+                                    if (senha.equals("1402")) {
                                         limparTela();
                                         senhaCorr = true;
                                         resposta = perguntaResposta("Voce coloca os numeros da data marcada no calendario (1402) na senha e a fechadura se abre. Dentro da caixa tinha mais um pedaço de espelho, no qual voce pega" + VERDE + "(Voce obteve o fragmento de espelho 2!)" + BRANCO + " e algo escrito no fundo da caixa:" + VERMELHO + " Mais uma vez o papai nao veio. " + BRANCO + " Uma porta aparece, a mesma porta do quarto de Merlin, voce entra e coloca mais um pedaco no espelho. A nevoa fica cada vez mais fraca, mas ainda tem dificuldade de ver o rosto.", opAvan);
