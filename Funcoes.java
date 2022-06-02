@@ -93,9 +93,9 @@ public class Funcoes {
             
             int resposta = 0;
             boolean chave = false;
-            String textoInicial = "O jogador acorda em um quarto escuro, onde a unica fonte de luz e uma lamparina que esta ao lado dele, ele a pega para iluminar mais o local, junto a ela havia uma chave. Em um dos cantos desse quarto, ele observa algo escondido por um pano o cobrindo e ao norte ha uma porta fechada.\n O que voce deseja fazer?";
+            String textoInicial = "Voce acorda em um quarto escuro, onde a unica fonte de luz e uma lamparina que esta ao seu lado, voce a pega para iluminar mais o local, junto a ela havia uma chave. (obteve lamparina e chave) Em um dos cantos desse quarto, voce observa algo escondido por um pano o cobrindo e ao norte ha uma porta fechada.\n O que voce deseja fazer?";
             String opUm [] = {"Pegar chave", "Ir ate o canto do quarto", "Ir ate a porta e tentar abrir"};
-            String caixaM = "Ele vai ate o canto onde ele viu algo e tira o pano de cima, revelando uma caixa pequena de madeira."; 
+            String caixaM = "Voce vai ate o canto onde viu algo e tira o pano de cima, revelando uma caixa pequena de madeira."; 
             String caixM[] = {"Abrir caixa", "Voltar"};
 
             do {
@@ -143,7 +143,7 @@ public class Funcoes {
                             case 1:
                                 limparTela();
                                 if (papelDirecoes == false) {
-                                    System.out.println(BRANCO + "Ele abre a caixa, dentro ele encontra um papel com direcoes escritas em uma ordem:" + VERMELHO + "esquerda-direita-direita-esquerda-direita" + BRANCO + " e logo em seguida esta escrito:" + VERMELHO + " Nao se perca." + VERDE + "\n" + "(Voce obteve um papel com direcoes!)");
+                                    System.out.println(BRANCO + "Voce abre a caixa, dentro se encontra um papel com direcoes escritas em uma ordem:" + VERMELHO + "esquerda-direita-direita-esquerda-direita" + BRANCO + " e logo em seguida esta escrito:" + VERMELHO + " Nao se perca." + VERDE + "\n" + "(Voce obteve um papel com direcoes!)");
                                     papelDirecoes = true;
                                     
                                     
@@ -197,7 +197,7 @@ public class Funcoes {
             int resposta = 0;
             int teste = 0;
             int volta = 0;
-            String textoCenaDois = "Ele abre a porta e da direto com um corredor sem qualquer iluminacao somente com a pouca luz de sua lamparina. Quando o jogador ultrapassa a porta, ela se fecha com forca nao o deixando voltar. Ele se encontra sem escolhas a nao ser continuar seguindo. Mais a frente, o jogador se depara com dois caminhos com algo escrito na parede entre eles." + VERMELHO + " Nao se perca." + BRANCO + " \nPara que lado voce quer ir?";
+            String textoCenaDois = "Voce abre a porta e da direto com um corredor sem qualquer iluminacao somente com a pouca luz de sua lamparina. Voce ultrapassa a porta, ela se fecha com forca nao o deixando voltar. Voce se encontra sem escolhas a nao ser continuar seguindo. Mais a frente, voce se depara com dois caminhos com algo escrito na parede entre eles." + VERMELHO + " Nao se perca." + BRANCO + " \nPara que lado voce quer ir?";
             String ladoCerto = VERDE + "Voce foi para o lado certo." + BRANCO + " \nPara que lado voce quer ir?";
             String opCenaDois [] = {"Esquerda", "Direita"};
 
@@ -215,7 +215,7 @@ public class Funcoes {
                 
                 if (errado >= 1) {
                     limparTela();
-                    System.out.println(VERMELHO + "Voce foi para o lado errado e teve que voltar desde o comeco do percurso.");
+                    System.out.println(VERMELHO + "Voce errou o caminho e teve que voltar desde o comeco do percurso.");
                     volta = 0;
                     errado = 0;
                     certo = 0;
@@ -245,15 +245,15 @@ public class Funcoes {
             int resposta = 0;
             voltar = 0;
             boolean fragmentoUm = false;
-            String textCenaTres = "O jogador chega em uma escada que da direto para uma recepcao de um hospital, ele esta vazio e bem sombrio, somente com uma atendente no balcao. O jogador se dirige ate a atendente e ela simplesmente o entrega um papel escrito:" + VERMELHO + "Quarto 13" + BRANCO + ". O jogador tenta contato, mas e completamente ignorado sempre que tenta conversar com a atendente. ";
+            String textCenaTres = "Voce chega em uma escada que da direto para uma recepcao de um hospital, ele esta vazio e bem sombrio, somente com uma atendente no balcao. Voce se dirige ate a atendente e ela simplesmente o entrega um papel escrito:" + VERMELHO + "Quarto 13" + BRANCO + ". Voce tenta contato, mas e completamente ignorado sempre que tenta conversar com a atendente. ";
             String opAvan [] = {"Avancar"};
             String opVolt [] = {"Voltar"};
             String opc [] = {"Ir ate moldura", opVolt[0]};
             String fichaMerlin [] = {"\n\n\nNome: Merlin ██████ ██████", "Quarto: 13", "Nacionalidade: Inglaterra/Ingles", "Altura: 1,78", "Genero: Masculino", "Nascimento: 04/10/1980", "Obito: 05/02/2017", "Idade: 37", "Tipo sanguineo: O –", "Esposa: ██████ █████ ██████","Nacionalidade da esposa: França/Francesa", "Filha: Olivia ██████ ██████", "Nacionalidade da filha: Inglaterra/Inglesa", " Pai: ███████ ██████", "Nacionalidade do Pai: Inglaterra/Inglês","Mãe: █████ ██████ ", "Nacionalidade da Mãe: Itália/Italiana", "-Causa da morte: ████████"};
-            String merlinTexto = "Algumas coisas estavam riscadas nao podendo identificar, mas ele guarda a ficha consigo. O jogador abre a porta e entra, era um quarto bem arrumado, as decoracoes pareciam muito com o estilo da mesa do lado de fora, a cama era grande e, ao que parece ser Merlin deitado nela, seu rosto esta coberto por uma nevoa preta. Ao lado da cama tem uma moldura de espelho na parede. \nO que voce deseja fazer?";
+            String merlinTexto = "Algumas coisas estavam riscadas nao podendo identificar, mas voce guarda a ficha consigo. Voce abre a porta e entra, era um quarto bem arrumado, as decoracoes pareciam muito com o estilo da mesa do lado de fora, a cama era grande e, ao que parece ser Merlin deitado nela, seu rosto esta coberto por uma nevoa preta. Ao lado da cama tem uma moldura de espelho na parede. \nO que voce deseja fazer?";
             String opTres[] = {"Ir ate a moldura","Olhar o corpo"};
             String moldOp = "Ele encaixa um dos pedacos que ele pegou da mao de Merlin e a nevoa de seu rosto comeca a ficar mais fraca, mas ainda nao sendo possivel de identificar o seu rosto.";
-            String corpOp = "O jogador decide analisar o corpo, ele esta completamente normal, sem nenhuma sequela ou algo do tipo e em umas de suas maos ele segura um pedaco de espelho quebrado." + VERDE + "Voce obteve fragmento de espelho 1!!" + BRANCO;
+            String corpOp = "Voce decide analisar o corpo, ele esta completamente normal, sem nenhuma sequela ou algo do tipo e em umas de suas maos ele segura um pedaco de espelho quebrado." + VERDE + "(Voce obteve fragmento de espelho 1!)" + BRANCO;
 
 
             do {
@@ -270,7 +270,7 @@ public class Funcoes {
                     voltar++;
                     limparTela();
                     System.out.println();
-                    System.out.println("Seguindo o corredor dos quartos ele acha o número indicado do papel, a porta era a única diferente, bem elegante e bonita, de madeira escura e envernizada, do lado da porta tem uma mesa tambem muito elegante, no mesmo estilo da porta, cheia de entalhes bonitos e adornos dourados, em cima tem um copo com agua e ao lado tem uma cartela de comprimidos vazia e a ficha do paciente. O jogador pega a ficha para analisar: \n\n\n\n || FICHA DE OBITO ||");
+                    System.out.println("Seguindo o corredor dos quartos voce acha o número indicado do papel, a porta era a única diferente, bem elegante e bonita, de madeira escura e envernizada, do lado da porta tem uma mesa tambem muito elegante, no mesmo estilo da porta, cheia de entalhes bonitos e adornos dourados, em cima tem um copo com agua e ao lado tem uma cartela de comprimidos vazia e a ficha do paciente. Voce pega a ficha para analisar: \n\n\n\n || FICHA DE OBITO ||");
                     for (int i = 0; i < fichaMerlin.length; i++) {
                         System.out.println(fichaMerlin[i]);
                     }
@@ -381,7 +381,7 @@ public class Funcoes {
             voltar = 0;
             String senha = "";
             boolean senhaCorr = false;
-            String textCenaQuatro = "A porta que antes Merlin havia entrado no quarto estava diferente, a porta agora e mal-acabada e parece velha, o jogador decide abrir e entrar. Ao entrar ele se depara com o que parece ser o lado de dentro de uma cabana de ferramentas cheia de tralhas e a porta que estava atras dele nao esta mais ali, o deixando sem saida. Nesse comodo tem uma mesa bem elegante no mesmo estilo do quarto de Merlin, com adornos dourados e entalhes bonitos, em cima dela tem uma caixa que possui uma fechadura, ao lado um bilhete na mesa escrito: " + AMARELO + "Lembrete: Nao esqueca do dia dela" + BRANCO + ". Ao olhar mais em volta ele ve um calendario. \nO que voce deseja fazer?";
+            String textCenaQuatro = "A porta por onde voce havia entrado no quarto estava diferente, agora ela esta mal-acabada e parece velha, voce decide abrir e entrar. Ao entrar voce se depara com o que parece ser o lado de dentro de uma cabana de ferramentas cheia de tralhas e a porta que estava atras de voce nao esta mais ali, o deixando sem saida. Nesse comodo tem uma mesa bem elegante no mesmo estilo do quarto de Merlin, com adornos dourados e entalhes bonitos, em cima dela tem uma caixa que possui uma fechadura, ao lado um bilhete na mesa escrito: " + AMARELO + "Lembrete: Nao esqueca do dia dela" + BRANCO + ". Ao olhar mais em volta voce ve um calendario. \nO que voce deseja fazer?";
             String opcoesCenaT[] = {"Ir ate a caixa", "Ir ate o calendario"};
             String opVolt[] = {"Voltar"};
             String opcCaixa[] = {"Digitar senha", opVolt[0]};
@@ -415,7 +415,7 @@ public class Funcoes {
                                     if (senha.equals("1406")) {
                                         limparTela();
                                         senhaCorr = true;
-                                        resposta = perguntaResposta("O jogador coloca os numeros da data marcada no calendario (1402) na senha e a fechadura se abre. Dentro da caixa tinha mais um pedaço de espelho, no qual ele pega" + VERDE + "(Voce obteve o fragmento de espelho 2!)" + BRANCO + " e algo escrito no fundo da caixa:" + VERMELHO + " Mais uma vez o papai nao veio. " + BRANCO + " Uma porta aparece, a mesma porta do quarto de Merlin, ele entra e coloca mais um pedaco no espelho. A nevoa fica cada vez mais fraca, mas ainda tem dificuldade de ver o rosto.", opAvan);
+                                        resposta = perguntaResposta("Voce coloca os numeros da data marcada no calendario (1402) na senha e a fechadura se abre. Dentro da caixa tinha mais um pedaço de espelho, no qual voce pega" + VERDE + "(Voce obteve o fragmento de espelho 2!)" + BRANCO + " e algo escrito no fundo da caixa:" + VERMELHO + " Mais uma vez o papai nao veio. " + BRANCO + " Uma porta aparece, a mesma porta do quarto de Merlin, voce entra e coloca mais um pedaco no espelho. A nevoa fica cada vez mais fraca, mas ainda tem dificuldade de ver o rosto.", opAvan);
 
                                         if (resposta == 1) {
                                             voltar++;
@@ -467,7 +467,7 @@ public class Funcoes {
     public static void cenaCinco() {
         try {
 
-            String textCinco = "A porta muda outra vez, e uma porta branca simples, o jogador entra e se depara com um quarto e a porta some novamente, parece ser um quarto infantil, uma cama pequena, guarda-roupa e uma mesa baixa com alguns papeis e lapis de cor espalhados. \nO que voce deseja fazer?";
+            String textCinco = "A porta muda outra vez, e uma porta branca simples, voce entra e se depara com um quarto e a porta some novamente, parece ser um quarto infantil, uma cama pequena, guarda-roupa e uma mesa baixa com alguns papeis e lapis de cor espalhados. \nO que voce deseja fazer?";
             int resposta = 0;
             voltar = 0;
             boolean chave = false;
@@ -493,7 +493,7 @@ public class Funcoes {
                    case 1:
                         limparTela();
                         while (voltar == 1) {
-                            resposta = perguntaResposta("Na cama em si nao ha nada demais, bem arrumada e organizada com algumas pelucias em cima, olhando em baixo, o jogador se depara com uma caixa de madeira muito elegante. ", opCama);
+                            resposta = perguntaResposta("Na cama em si nao ha nada demais, bem arrumada e organizada com algumas pelucias em cima, olhando em baixo, voce se depara com uma caixa de madeira muito elegante. ", opCama);
 
                             if (validator(resposta) || resposta > opCama.length){
                                 limparTela();
@@ -537,7 +537,7 @@ public class Funcoes {
 
                    case 2:
                         limparTela();
-                        resposta = perguntaResposta("Olhando a mesa, ele ve um desenho em uma das folhas, ao que parece ser uma familia, uma figura feminina alta segurando a mao de uma outra figura feminina so que mais baixa e com um rosto triste desenhado e uma figura masculina ao lado das duas com o rosto rabiscado, no outro desenho tem um armario e a mesma figura feminina menor dentro dele e com o rosto triste, do lado uma janela e parece estar chovendo pelos riscos nela. ", opVolt);
+                        resposta = perguntaResposta("Olhando a mesa, voce ve um desenho em uma das folhas, ao que parece ser uma familia, uma figura feminina alta segurando a mao de uma outra figura feminina so que mais baixa e com um rosto triste desenhado e uma figura masculina ao lado das duas com o rosto rabiscado, no outro desenho tem um armario e a mesma figura feminina menor dentro dele e com o rosto triste, do lado uma janela e parece estar chovendo forte e trovejando. ", opVolt);
 
                         if (resposta == 1) {
                             limparTela();
@@ -548,7 +548,7 @@ public class Funcoes {
 
                    case 3:
                         limparTela();
-                        resposta = perguntaResposta("Ele abre a porta do guarda-roupa, esta vazio, mas tem algo escrito na madeira, como se tivesse sido raspado:" + VERMELHO + " to com medo" + BRANCO + ", instantaneamente comeca uma chuva forte, seguido de um trovao, algo cai de cima do guarda-roupa, ao olhar mais de perto, ele se depara com uma chave," + VERDE + " (obteve: Chave da caixa). " + BRANCO, opVolt);
+                        resposta = perguntaResposta("Voce abre a porta do guarda-roupa, esta vazio, mas tem algo escrito na madeira, como se tivesse sido raspado:" + VERMELHO + " to com medo" + BRANCO + ", instantaneamente comeca uma chuva forte, seguido de um trovao, algo cai de cima do guarda-roupa, ao olhar mais de perto, ele se depara com uma chave," + VERDE + " (obteve: Chave da caixa). " + BRANCO, opVolt);
                         chave = true;
 
                         if (resposta == 1) {
@@ -577,7 +577,7 @@ public class Funcoes {
             voltar = 0;
             String senha = "";
             String textSeisA = "O espelho esta quase completo, mas ainda parece faltar um ultimo pedaco e o nevoa abaixa mais uma vez, mas ainda nao dando para identificar o rosto. Dessa vez a porta nao mudou, mas ela esta entreaberta, mas e muito escuro para poder enxergar la dentro. De repente um barulho de vidro quebrando vem de dentro do lugar.";
-            String textSeisB = "Ao entrar o quarto esta escuro somente com a luz da tela de um computador antigo que esta em cima de uma mesa de escritorio, a mesa tem duas gavetas olhando na primeira gaveta tem muitos remedios e comprimidos, mas nada alem disso, na gaveta de baixo tem alguns papeis com anotacoes de trabalho e um caderno pequeno, ao pegar o caderno e olhar tem uma unica coisa escrita nele:" + AMARELO + "Usuario: MerlinLM \nSenha: 041053"+ BRANCO + ".";
+            String textSeisB = "Ao entrar o quarto esta escuro somente com a luz da tela de um notebook que esta em cima de uma mesa de escritorio, a mesa tem duas gavetas. Olhando na primeira gaveta tem muitos remedios e comprimidos, mas nada alem disso, na gaveta de baixo tem alguns papeis com anotacoes de trabalho e um caderno pequeno, ao pegar o caderno e olhar, tem uma unica coisa escrita nele:" + AMARELO + "Usuario: MerlinLM \nSenha: 041053"+ BRANCO + ".";
             String textSeisC = "Em cima, alem do notebook ligado, ao lado tem um porta retrato com uma foto de uma garotinha. Olhando o chao, ha cacos de vidro espalhados, como se algo tivesse sido jogado e quebrado. Ao usar o usuario e a senha no notebook ele e desbloqueado, tendo assim logo de comeco um e-mail aberto:" + AMARELO +  "Devido as circunstancias da empresa e de problemas administrativos, estamos o desligando. Agradecemos o seu servico. suporte@agenciamv.com" + BRANCO +  "e alguns arquivos na área de trabalho:" + AMARELO + " img1.png, img2.png e img3.png." + BRANCO;
             String opAvan [] = {"Avancar"};
             String opVoltar[] = {"Voltar"};
@@ -735,8 +735,8 @@ public class Funcoes {
 
             voltar = 0;
             int resposta = 0;
-            String textFinalA = "Depois de ver a ultima imagem, a porta se fecha com forca. Ao analisar o porta-retrato novamente, tem uma chave logo atras. A porta que estava trancada agora pode ser aberta. Uma sala completamente vazia, apenas com uma mesa no meio e uma luz vinda de cima a iluminando, em cima da mesa tem mais um pedaço do espelho" + VERDE + "(obteve: Fragmento de espelho). " + BRANCO;
-            String textFinalB = "A luz se apaga o deixando no completo escuro, logo em seguida uma outra luz acende iluminando uma porta ao longe, a porta do quarto de Merlin. Entrando na porta, agora temos a presenca de duas entidades: uma crianca e uma mulher ao lado da cama de Merlin olhando para ele, elas te ignoram mesmo tentando interagir. Colocando o ultimo fragmento a nevoa some.";
+            String textFinalA = "Depois de ver a ultima imagem, a porta se fecha com forca. Ao analisar o porta-retrato novamente, tem uma chave logo atras. A porta que estava trancada agora pode ser aberta. Uma sala completamente vazia, apenas com uma mesa no meio e uma luz vinda de cima a iluminando, em cima da mesa tem mais um pedaço do espelho" + VERDE + "(Voce obteve o fragmento de espelho 3!). " + BRANCO;
+            String textFinalB = "A luz se apaga o deixando no completo escuro, logo em seguida uma outra luz acende iluminando uma porta ao longe, a porta do quarto de Merlin. Entrando na porta, agora temos a presenca de duas entidades: uma crianca e uma mulher ao lado da cama de Merlin olhando para ele, elas te ignoram mesmo tentando interagir. Colocando o ultimo fragmento a nevoa some...";
             String textFinalC = "Tudo fica escuro, no fundo uma reportagem tocando em um radio:" + AMARELO + "Merlin Lennox Marino foi encontrado desacordado nessa manha de segunda-feira, dia 5 de fevereiro de 2017. Perto dele havia um copo com agua e ao lado uma cartela de comprimidos vazia. Uma carta de desabafo estava junto com a cartela de comprimidos. Apos isso ele foi levado para o hospital mais proximo, mas acabou nao resistindo."+ BRANCO + " \nAgora o silencio toma conta... \n\n\n\n\n\n\n Ler a carta?";
             String respOp [] = {"Sim", "Nao"};
             String cartaMerlinA = AMARELO + "Viver por viver. O que tenho a aproveitar de uma vida assim? Vivi a vida trabalhando dia e noite, evitando folgas e sempre me empolgava quando meu chefe pedia para fazer algo a mais, e no final acabei sendo despedido. Ignorava qualquer coisa que nao fosse trabalho, eu apenas estava afim de ganhar a vida o mais rapido o possivel que virou rotina trabalhar diariamente e viver para o trabalho. Eu achei que estava dando o melhor para os meus. Uma casa, um conforto, tudo que eles precisavam... Mas, e eu? Peço perdao, Olivia. O papai nao pode estar em nenhum dos seus aniversarios. O papai mal estava presente em casa. Peco perdao, querida. Você se casou com uma maquina que esqueceu o que a amor. Voce sempre estava ali por mim, quando eu estava chorando, quando eu estava feliz, mas eu nem sequer lembrei a data do seu aniversario quando ele chegou, e voce nao teve nem mesmo um bolo. Agradeco por comemorar os anos da minha filha e nao deixar ela passar pelo que te fiz passar. Querida, voce deve ter sofrido muito por estar com alguem como eu.";
