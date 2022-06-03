@@ -197,6 +197,7 @@ public class Funcoes {
             int resposta = 0;
             int teste = 0;
             int volta = 0;
+            int papel = 0;
             String textoCenaDois = "Voce abre a porta e da direto com um corredor sem qualquer iluminacao somente com a pouca luz de sua lamparina. Voce ultrapassa a porta, ela se fecha com forca nao o deixando voltar. Voce se encontra sem escolhas a nao ser continuar seguindo. Mais a frente, voce se depara com dois caminhos com algo escrito na parede entre eles." + VERMELHO + " Nao se perca." + BRANCO + " \nPara que lado voce quer ir?";
             String ladoCerto = VERDE + "Voce foi para o lado certo." + BRANCO + " \nPara que lado voce quer ir?";
             String opCenaDois [] = {"Esquerda", "Direita"};
@@ -204,13 +205,17 @@ public class Funcoes {
             do {
                 volta++;
 
-                if ( papelDirecoes == true) {
+                if ( papelDirecoes == true && papel == 0) {
+                    papel++;
                     System.out.println(AMARELO + "esquerda-direita-direita-esquerda-direita");
-                }  
-
+                }
                 if (volta == 1) {
                     resposta = perguntaResposta(textoCenaDois, opCenaDois);
                         direcoesConf(resposta, direcoes, teste);
+                }
+
+                if ( papelDirecoes == true && papel == 1) {
+                    System.out.println(AMARELO + "esquerda-direita-direita-esquerda-direita");
                 }
                 
                 if (errado >= 1) {
@@ -225,13 +230,13 @@ public class Funcoes {
 
                 if (certo >= 1) {
                     teste++;
-                    resposta = perguntaResposta(ladoCerto, opCenaDois);
 
+                    resposta = perguntaResposta(ladoCerto, opCenaDois);
                     direcoesConf(resposta, direcoes, teste);
                 }
 
  
-            } while (volta == 0 || volta < 4);
+            } while (volta == 0 || certo != 5);
 
         } catch (Exception ex) {
             ex.printStackTrace();
