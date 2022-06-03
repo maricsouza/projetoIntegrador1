@@ -250,15 +250,15 @@ public class Funcoes {
             int resposta = 0;
             voltar = 0;
             boolean fragmentoUm = false;
-            String textCenaTres = "Voce chega em uma escada que da direto para uma recepcao de um hospital, ele esta vazio e bem sombrio, somente com uma atendente no balcao. Voce se dirige ate a atendente e ela simplesmente o entrega um papel escrito:" + VERMELHO + "Quarto 13" + BRANCO + ". Voce tenta contato, mas e completamente ignorado sempre que tenta conversar com a atendente. ";
+            String textCenaTres = "Voce chega em uma escada que da direto para uma recepcao de um hospital, ele esta vazio e bem sombrio, somente com uma atendente no balcao. Voce se dirige ate a atendente e ela simplesmente o entrega um papel escrito:" + VERMELHO + " Quarto 13" + BRANCO + ". Voce tenta contato, mas e completamente ignorado sempre que tenta conversar com a atendente. ";
             String opAvan [] = {"Avancar"};
             String opVolt [] = {"Voltar"};
             String opc [] = {"Ir ate moldura", opVolt[0]};
-            String fichaMerlin [] = {"\n\n\nNome: Merlin ██████ ██████", "Quarto: 13", "Nacionalidade: Inglaterra/Ingles", "Altura: 1,78", "Genero: Masculino", "Nascimento: 04/10/1980", "Obito: 05/02/2017", "Idade: 37", "Tipo sanguineo: O –", "Esposa: ██████ █████ ██████","Nacionalidade da esposa: França/Francesa", "Filha: Olivia ██████ ██████", "Nacionalidade da filha: Inglaterra/Inglesa", " Pai: ███████ ██████", "Nacionalidade do Pai: Inglaterra/Inglês","Mãe: █████ ██████ ", "Nacionalidade da Mãe: Itália/Italiana", "-Causa da morte: ████████"};
+            String fichaMerlin [] = {"\nNome: Merlin _______ _______", "Quarto: 13", "Nacionalidade: Inglaterra/Ingles", "Altura: 1,78", "Genero: Masculino", "Nascimento: 04/10/1980", "Obito: 05/02/2017", "Idade: 37", "Tipo sanguineo: O ", "Esposa: ______ _______ _______","Nacionalidade da esposa: Franca/Francesa", "Filha: Olivia ______ ______", "Nacionalidade da filha: Inglaterra/Inglesa", " Pai: _______ _______", "Nacionalidade do Pai: Inglaterra/Ingles","Mae: _______ ______ ", "Nacionalidade da Mae: Italia/Italiana", "-Causa da morte: O_________"};
             String merlinTexto = "Algumas coisas estavam riscadas nao podendo identificar, mas voce guarda a ficha consigo. Voce abre a porta e entra, era um quarto bem arrumado, as decoracoes pareciam muito com o estilo da mesa do lado de fora, a cama era grande e, ao que parece ser Merlin deitado nela, seu rosto esta coberto por uma nevoa preta. Ao lado da cama tem uma moldura de espelho na parede. \nO que voce deseja fazer?";
             String opTres[] = {"Ir ate a moldura","Olhar o corpo"};
             String moldOp = "Ele encaixa um dos pedacos que ele pegou da mao de Merlin e a nevoa de seu rosto comeca a ficar mais fraca, mas ainda nao sendo possivel de identificar o seu rosto.";
-            String corpOp = "Voce decide analisar o corpo, ele esta completamente normal, sem nenhuma sequela ou algo do tipo e em umas de suas maos ele segura um pedaco de espelho quebrado." + VERDE + "(Voce obteve fragmento de espelho 1!)" + BRANCO;
+            String corpOp = "Voce decide analisar o corpo, ele esta completamente normal, sem nenhuma sequela ou algo do tipo e em umas de suas maos ele segura um pedaco de espelho quebrado." + VERDE + " (Voce obteve fragmento de espelho 1!)" + BRANCO;
 
 
             do {
@@ -275,12 +275,12 @@ public class Funcoes {
                     voltar++;
                     limparTela();
                     System.out.println();
-                    System.out.println("Seguindo o corredor dos quartos voce acha o número indicado do papel, a porta era a única diferente, bem elegante e bonita, de madeira escura e envernizada, do lado da porta tem uma mesa tambem muito elegante, no mesmo estilo da porta, cheia de entalhes bonitos e adornos dourados, em cima tem um copo com agua e ao lado tem uma cartela de comprimidos vazia e a ficha do paciente. Voce pega a ficha para analisar: \n\n\n\n || FICHA DE OBITO ||");
+                    System.out.println("Seguindo o corredor dos quartos voce acha o numero indicado do papel, a porta era a única diferente, bem elegante e bonita, de madeira escura e envernizada, do lado da porta tem uma mesa tambem muito elegante, no mesmo estilo da porta, cheia de entalhes bonitos e adornos dourados, em cima tem um copo com agua e ao lado tem uma cartela de comprimidos vazia e a ficha do paciente. Voce pega a ficha para analisar: \n\n || FICHA DE OBITO ||");
                     for (int i = 0; i < fichaMerlin.length; i++) {
                         System.out.println(fichaMerlin[i]);
                     }
 
-                    System.out.println("\n\n\n||||||||||||||||||||||||||||||||||||\n\n\n");
+                    System.out.println("\nP||||||||||||||||||||||||||||||||||||\n\n");
 
                     System.out.println("1. " + opAvan[0]);
                     System.out.print("Selecione uma opcao 1/1: ");
@@ -386,7 +386,7 @@ public class Funcoes {
             voltar = 0;
             String senha = "";
             boolean senhaCorr = false;
-            String textCenaQuatro = "A porta por onde voce havia entrado no quarto estava diferente, agora ela esta mal-acabada e parece velha, voce decide abrir e entrar. Ao entrar voce se depara com o que parece ser o lado de dentro de uma cabana de ferramentas cheia de tralhas e a porta que estava atras de voce nao esta mais ali, o deixando sem saida. Nesse comodo tem uma mesa bem elegante no mesmo estilo do quarto de Merlin, com adornos dourados e entalhes bonitos, em cima dela tem uma caixa que possui uma fechadura, ao lado um bilhete na mesa escrito: " + AMARELO + "Lembrete: Nao esqueca do dia dela" + BRANCO + ". Ao olhar mais em volta voce ve um calendario. \nO que voce deseja fazer?";
+            String textCenaQuatro = "A porta por onde voce havia entrado no quarto estava diferente, agora ela esta mal-acabada e parece velha, voce decide abrir e entrar. Ao entrar voce se depara com o que parece ser o lado de dentro de uma cabana de ferramentas cheia de tralhas e a porta que estava atras de voce nao esta mais ali, o deixando sem saida. Nesse comodo tem uma mesa bem elegante no mesmo estilo do quarto de Merlin, com adornos dourados e entalhes bonitos, em cima dela tem uma caixa que possui uma fechadura, ao lado um bilhete na mesa escrito: " + AMARELO + " Lembrete: Nao esqueca do dia dela" + BRANCO + ". Ao olhar mais em volta voce ve um calendario. \nO que voce deseja fazer?";
             String opcoesCenaT[] = {"Ir ate a caixa", "Ir ate o calendario"};
             String opVolt[] = {"Voltar"};
             String opcCaixa[] = {"Digitar senha", opVolt[0]};
@@ -420,7 +420,7 @@ public class Funcoes {
                                     if (senha.equals("1402")) {
                                         limparTela();
                                         senhaCorr = true;
-                                        resposta = perguntaResposta("Voce coloca os numeros da data marcada no calendario (1402) na senha e a fechadura se abre. Dentro da caixa tinha mais um pedaço de espelho, no qual voce pega" + VERDE + "(Voce obteve o fragmento de espelho 2!)" + BRANCO + " e algo escrito no fundo da caixa:" + VERMELHO + " Mais uma vez o papai nao veio. " + BRANCO + " Uma porta aparece, a mesma porta do quarto de Merlin, voce entra e coloca mais um pedaco no espelho. A nevoa fica cada vez mais fraca, mas ainda tem dificuldade de ver o rosto.", opAvan);
+                                        resposta = perguntaResposta("Voce coloca os numeros da data marcada no calendario (1402) na senha e a fechadura se abre. Dentro da caixa tinha mais um pedaço de espelho, no qual voce pega" + VERDE + " (Voce obteve o fragmento de espelho 2!)" + BRANCO + " e algo escrito no fundo da caixa:" + VERMELHO + " Mais uma vez o papai nao veio. " + BRANCO + " Uma porta aparece, a mesma porta do quarto de Merlin, voce entra e coloca mais um pedaco no espelho. A nevoa fica cada vez mais fraca, mas ainda tem dificuldade de ver o rosto.", opAvan);
 
                                         if (resposta == 1) {
                                             voltar++;
@@ -449,7 +449,7 @@ public class Funcoes {
                         
                     case 2:
                         limparTela();
-                        resposta = perguntaResposta("Calendario do ano de 2006, no dia 14 de fevereiro" + VERMELHO + "(14/02)" + BRANCO + " tem um nome escrito: " + AMARELO +  "Olivia." + BRANCO, opVolt);
+                        resposta = perguntaResposta("Calendario do ano de 2006, no dia 14 de fevereiro " + VERMELHO + "(14/02)" + BRANCO + " tem um nome escrito: " + AMARELO +  "Olivia." + BRANCO, opVolt);
 
                         if (resposta == 1) {
                             limparTela();
@@ -583,7 +583,7 @@ public class Funcoes {
             String senha = "";
             String textSeisA = "O espelho esta quase completo, mas ainda parece faltar um ultimo pedaco e o nevoa abaixa mais uma vez, mas ainda nao dando para identificar o rosto. Dessa vez a porta nao mudou, mas ela esta entreaberta, mas e muito escuro para poder enxergar la dentro. De repente um barulho de vidro quebrando vem de dentro do lugar.";
             String textSeisB = "Ao entrar o quarto esta escuro somente com a luz da tela de um notebook que esta em cima de uma mesa de escritorio, a mesa tem duas gavetas. Olhando na primeira gaveta tem muitos remedios e comprimidos, mas nada alem disso, na gaveta de baixo tem alguns papeis com anotacoes de trabalho e um caderno pequeno, ao pegar o caderno e olhar, tem uma unica coisa escrita nele:" + AMARELO + "Usuario: MerlinLM \nSenha: 041053"+ BRANCO + ".";
-            String textSeisC = "Em cima, alem do notebook ligado, ao lado tem um porta retrato com uma foto de uma garotinha. Olhando o chao, ha cacos de vidro espalhados, como se algo tivesse sido jogado e quebrado. Ao usar o usuario e a senha no notebook ele e desbloqueado, tendo assim logo de comeco um e-mail aberto:" + AMARELO +  "Devido as circunstancias da empresa e de problemas administrativos, estamos o desligando. Agradecemos o seu servico. suporte@agenciamv.com" + BRANCO +  "e alguns arquivos na área de trabalho:" + AMARELO + " img1.png, img2.png e img3.png." + BRANCO;
+            String textSeisC = "Em cima, alem do notebook ligado, ao lado tem um porta retrato com uma foto de uma garotinha. Olhando o chao, ha cacos de vidro espalhados, como se algo tivesse sido jogado e quebrado. Ao usar o usuario e a senha no notebook ele e desbloqueado, tendo assim logo de comeco um e-mail aberto:" + AMARELO +  " Devido as circunstancias da empresa e de problemas administrativos, estamos o desligando. Agradecemos o seu servico. suporte@agenciamv.com" + BRANCO +  " e alguns arquivos na área de trabalho:" + AMARELO + " img1.png, img2.png e img3.png." + BRANCO;
             String opAvan [] = {"Avancar"};
             String opVoltar[] = {"Voltar"};
             String opSenha[] = {"Digite a senha", "Voltar"};
@@ -650,7 +650,7 @@ public class Funcoes {
 
                                         if(senha.equalsIgnoreCase("Olivia")) {
                                             limparTela();
-                                            resposta = perguntaResposta(AMARELO + "img2.png: " + BRANCO + "A parte de tras de um porta-retrato com uma chave colada e tem algo escrito no canto da imagem:" + VERMELHO + "AMELIA." + BRANCO, opVoltar);
+                                            resposta = perguntaResposta(AMARELO + "img2.png: " + BRANCO + "A parte de tras de um porta-retrato com uma chave colada e tem algo escrito no canto da imagem:" + VERMELHO + " AMELIA." + BRANCO, opVoltar);
 
                                             if ( resposta == 1 ) {
                                                 limparTela();
